@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "dependencies": {
+    "fastify": "^5.2.2"
+  },
+  "devDependencies": {
+    "@personal-ai/eslint-config": "^1.0.0",
+    "@personal-ai/typescript-config": "^0.0.0",
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@personal-ai/eslint-config/node"
+    ]
+  }
+}
