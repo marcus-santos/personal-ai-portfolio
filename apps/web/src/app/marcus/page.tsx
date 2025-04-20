@@ -1,14 +1,14 @@
-import Link from 'next/link';
 import Header from '../components/Header';
 
 function page() {
   return (
     <div className="w-screen h-full">
       <Header
-        title={'/marcus'}
-        portfolioRef={'/marcus/portfolio'}
+        title={'marcus-santos'}
+        titleRef={'/marcus'}
+        portfolioRef={'/portfolio'}
         resumeRef={'marcus/resume'}
-        contactRef={'marcus/contact'}
+        transfer={'/lukas'}
         githubRef={'https://www.github.com/marcus-santos'}
         linkedInRef={'https://www.linkedin.com/in/marcus-vinicius-csantos'}
         instagramRef={'https://www.instagram.com/marcus.csantos/'}

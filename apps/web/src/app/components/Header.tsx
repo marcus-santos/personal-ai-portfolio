@@ -1,11 +1,21 @@
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
+import { Dialog, DialogHeader } from '@/components/ui/dialog';
+import {
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from '@radix-ui/react-dialog';
 
 interface HeaderProps {
   title: string;
+  titleRef: string;
   portfolioRef: string;
   resumeRef: string;
-  contactRef: string;
+  transfer: string;
   githubRef: string;
   linkedInRef: string;
   instagramRef: string;
@@ -13,9 +23,10 @@ interface HeaderProps {
 
 function Header({
   title,
+  titleRef,
   portfolioRef,
   resumeRef,
-  contactRef,
+  transfer,
   githubRef,
   linkedInRef,
   instagramRef,
@@ -23,48 +34,96 @@ function Header({
   return (
     <header className="w-full h-14 px-8 flex">
       <div className="flex h-full">
-        <Link className="my-auto mr-5 font-bold whitespace-nowrap" href={title}>
-          marcus-santos
+        <Link
+          className="text-lg text-neutral-100 my-auto mr-6 font-bold whitespace-nowrap"
+          href={titleRef}
+        >
+          {title}
         </Link>
-        <nav className="text-sm font-semibold text-white/60 my-auto space-x-5">
+        <nav className="text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
           <Link
-            className="hover:text-violet-600 transition"
+            className={`hover:text-violet-500 transition`}
             href={portfolioRef}
           >
             Portfolio
           </Link>
-          <Link className="hover:text-violet-600 transition" href={resumeRef}>
+          <Link
+            className={`hover:text-violet-500 transition"`}
+            href={resumeRef}
+          >
             Resume
           </Link>
-          <Link className="hover:text-violet-600 transition" href={contactRef}>
-            Contact
-          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant={'link'}
+                className={`hover:text-violet-500 transition cursor-pointer p-0`}
+              >
+                Contact
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="fixed inset-0 flex items-center justify-center bg-black/50">
+              <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
+                <DialogHeader>
+                  <div className="flex justify-between">
+                    <DialogTitle className="text-xl">Contact Me</DialogTitle>
+                    <DialogClose className="text-xl mr-3 text-white/50 font-normal hover:text-white cursor-pointer">
+                      x
+                    </DialogClose>
+                  </div>
+                  <DialogDescription className="my-3">
+                    Fill out the form below to get in touch.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col gap-4">
+                  <form className="w-full m-1 flex flex-col space-y-5">
+                    <input
+                      className="w-full p-2 border border-neutral-400 rounded"
+                      placeholder="Name"
+                    />
+                    <input
+                      className="w-full p-2 border border-neutral-400 rounded"
+                      placeholder="Email"
+                      type="email"
+                    />
+                    <textarea
+                      className="w-full size-40 resize-none p-2 border border-neutral-400 rounded"
+                      placeholder="Message"
+                    />
+                    <Button type="submit" className="mt-4">
+                      Send
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </nav>
       </div>
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link
-          href={''}
-          className="hover:bg-violet-600/50 p-2 hover:rounded transition"
+          href={transfer}
+          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
         >
-          <FaRegUser />
+          <FaRegUser size={18} />
         </Link>
         <Link
           href={githubRef}
-          className="hover:bg-violet-600/50 p-2 hover:rounded transition"
+          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
         >
-          <FaGithub />
+          <FaGithub size={18} />
         </Link>
         <Link
           href={linkedInRef}
-          className="hover:bg-violet-600/50 p-2 hover:rounded transition"
+          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
         >
-          <FaLinkedinIn />
+          <FaLinkedinIn size={18} />
         </Link>
         <Link
           href={instagramRef}
-          className="hover:bg-violet-600/50 p-2 hover:rounded transition"
+          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
         >
-          <FaInstagram />
+          <FaInstagram size={18} />
         </Link>
       </div>
     </header>
