@@ -32,32 +32,29 @@ function Header({
   instagramRef,
 }: HeaderProps) {
   return (
-    <header className="w-full h-14 px-8 flex">
+    <header className="sticky top-0 z-50 w-full h-14 px-8 flex">
       <div className="flex h-full">
         <Link
-          className="text-lg text-neutral-100 my-auto mr-6 font-bold whitespace-nowrap"
+          className="text-lg my-3 mr-10 font-semibold whitespace-nowrap"
           href={titleRef}
         >
           {title}
         </Link>
         <nav className="text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
           <Link
-            className={`hover:text-violet-500 transition`}
+            className={`hover:text-[#22c55e] transition`}
             href={portfolioRef}
           >
             Portfolio
           </Link>
-          <Link
-            className={`hover:text-violet-500 transition"`}
-            href={resumeRef}
-          >
+          <Link className={`hover:text-[#22c55e] transition"`} href={resumeRef}>
             Resume
           </Link>
           <Dialog>
             <DialogTrigger asChild>
               <Button
                 variant={'link'}
-                className={`hover:text-violet-500 transition cursor-pointer p-0`}
+                className={`hover:text-[#22c55e] transition cursor-pointer p-0`}
               >
                 Contact
               </Button>
@@ -103,25 +100,25 @@ function Header({
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link
           href={transfer}
-          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
+          className={`hover:bg-[#22c55e]/70 p-2 hover:rounded transition`}
         >
           <FaRegUser size={18} />
         </Link>
         <Link
           href={githubRef}
-          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
+          className={`hover:bg-[#22c55e]/70 p-2 hover:rounded transition`}
         >
           <FaGithub size={18} />
         </Link>
         <Link
           href={linkedInRef}
-          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
+          className={`hover:bg-[#22c55e]/70 p-2 hover:rounded transition`}
         >
           <FaLinkedinIn size={18} />
         </Link>
         <Link
           href={instagramRef}
-          className={`hover:bg-violet-500/50 p-2 hover:rounded transition`}
+          className={`hover:bg-[#22c55e]/70 p-2 hover:rounded transition`}
         >
           <FaInstagram size={18} />
         </Link>
