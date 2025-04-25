@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@radix-ui/react-dialog';
+import ContactForm from './ContactForm';
 
 interface HeaderProps {
   title: string;
@@ -32,7 +33,7 @@ function Header({
   instagramRef,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-50 w-full h-14 px-8 flex">
+    <header className="sticky top-0 z-50 w-[1472px] h-14 px-8 flex m-auto">
       <div className="flex h-full">
         <Link
           className="text-lg my-3 mr-10 font-semibold whitespace-nowrap"
@@ -45,56 +46,19 @@ function Header({
             className={`hover:text-[#22c55e] transition`}
             href={portfolioRef}
           >
-            Portfolio
+            Works
           </Link>
           <Link className={`hover:text-[#22c55e] transition"`} href={resumeRef}>
             Resume
           </Link>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                variant={'link'}
-                className={`hover:text-[#22c55e] transition cursor-pointer p-0`}
-              >
-                Contact
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="fixed inset-0 flex items-center justify-center bg-black/50">
-              <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
-                <DialogHeader>
-                  <div className="flex justify-between">
-                    <DialogTitle className="text-xl">Contact Me</DialogTitle>
-                    <DialogClose className="text-xl mr-3 text-white/50 font-normal hover:text-white cursor-pointer">
-                      x
-                    </DialogClose>
-                  </div>
-                  <DialogDescription className="my-3">
-                    Fill out the form below to get in touch.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="flex flex-col gap-4">
-                  <form className="w-full m-1 flex flex-col space-y-5">
-                    <input
-                      className="w-full p-2 border border-neutral-400 rounded"
-                      placeholder="Name"
-                    />
-                    <input
-                      className="w-full p-2 border border-neutral-400 rounded"
-                      placeholder="Email"
-                      type="email"
-                    />
-                    <textarea
-                      className="w-full size-40 resize-none p-2 border border-neutral-400 rounded"
-                      placeholder="Message"
-                    />
-                    <Button type="submit" className="mt-4">
-                      Send
-                    </Button>
-                  </form>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+          <ContactForm>
+            <Button
+              variant={'link'}
+              className={`hover:text-[#22c55e] transition cursor-pointer p-0`}
+            >
+              Contact
+            </Button>
+          </ContactForm>
         </nav>
       </div>
       <div className="flex justify-end w-full my-auto space-x-2">
