@@ -12,7 +12,6 @@ function page() {
         githubRef={'https://www.github.com/marcus-santos'}
         linkedInRef={'https://www.linkedin.com/in/marcus-vinicius-csantos'}
         instagramRef={'https://www.instagram.com/marcus.csantos/'}
-        textColor="violet"
       />
     </div>
   );
