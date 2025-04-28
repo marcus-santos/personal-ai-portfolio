@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
@@ -9,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@radix-ui/react-dialog';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
   title: string;
@@ -19,7 +22,6 @@ interface HeaderProps {
   githubRef: string;
   linkedInRef: string;
   instagramRef: string;
-  textColor: string;
 }
 
 function Header({
@@ -31,8 +33,9 @@ function Header({
   githubRef,
   linkedInRef,
   instagramRef,
-  textColor,
 }: HeaderProps) {
+  const pathName = usePathname();
+
   return (
     <header className="w-full h-14 px-8 flex">
       <div className="flex h-full">
@@ -44,13 +47,13 @@ function Header({
         </Link>
         <nav className="text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
           <Link
-            className={`hover:text-${textColor}-500 transition`}
+            className={`${pathName.includes('marcus') ? 'hover:text-violet-500 transition' : 'hover:text-blue-500 transition'}`}
             href={portfolioRef}
           >
             Portfolio
           </Link>
           <Link
-            className={`hover:text-${textColor}-500 transition"`}
+            className={`${pathName.includes('marcus') ? 'hover:text-violet-500 transition' : 'hover:text-blue-500 transition'}`}
             href={resumeRef}
           >
             Resume
@@ -59,7 +62,7 @@ function Header({
             <DialogTrigger asChild>
               <Button
                 variant={'link'}
-                className={`hover:text-${textColor}-500 transition cursor-pointer p-0`}
+                className={`${pathName.includes('marcus') ? 'hover:text-violet-500 transition' : 'hover:text-blue-500 transition'} transition cursor-pointer p-0`}
               >
                 Contact
               </Button>
@@ -105,25 +108,25 @@ function Header({
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link
           href={transfer}
-          className={`hover:bg-${textColor}-500/50 p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-violet-500/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaRegUser size={18} />
         </Link>
         <Link
           href={githubRef}
-          className={`hover:bg-${textColor}-500/50 p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-violet-500/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaGithub size={18} />
         </Link>
         <Link
           href={linkedInRef}
-          className={`hover:bg-${textColor}-500/50 p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-violet-500/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaLinkedinIn size={18} />
         </Link>
         <Link
           href={instagramRef}
-          className={`hover:bg-${textColor}-500/50 p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-violet-500/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaInstagram size={18} />
         </Link>
