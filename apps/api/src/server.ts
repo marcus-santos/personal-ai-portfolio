@@ -1,4 +1,5 @@
 import Fastify from 'fastify';
+import { env } from './env';
 
 const fastify = Fastify();
 
@@ -6,7 +7,7 @@ fastify.get('/', (request, reply) => {
   reply.send({ hello: 'world' });
 });
 
-fastify.listen({ port: 3333 }, (err) => {
+fastify.listen({ port: env.PORT }, (err) => {
   console.log('🚀 HTTP server running!');
 
   if (err) {
