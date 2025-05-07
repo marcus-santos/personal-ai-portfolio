@@ -37,10 +37,10 @@ function Header({
   const pathName = usePathname();
 
   return (
-    <header className="w-full h-14 px-8 flex">
+    <header className="sticky top-0 z-50 w-[1472px] h-14 px-8 flex m-auto">
       <div className="flex h-full">
         <Link
-          className="text-lg text-neutral-100 my-auto mr-6 font-bold whitespace-nowrap"
+          className="text-lg my-3 mr-10 font-semibold whitespace-nowrap"
           href={titleRef}
         >
           {title}
@@ -50,7 +50,7 @@ function Header({
             className={`${pathName.includes('marcus') ? 'hover:text-violet-500 transition' : 'hover:text-blue-500 transition'}`}
             href={portfolioRef}
           >
-            Portfolio
+            Works
           </Link>
           <Link
             className={`${pathName.includes('marcus') ? 'hover:text-violet-500 transition' : 'hover:text-blue-500 transition'}`}
