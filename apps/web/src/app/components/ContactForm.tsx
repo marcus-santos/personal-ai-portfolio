@@ -1,5 +1,8 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { DialogHeader } from '@/components/ui/dialog';
+import { usePathname } from 'next/navigation';
 import {
   Dialog,
   DialogClose,
@@ -10,6 +13,7 @@ import {
 } from '@radix-ui/react-dialog';
 
 function ContactForm({ children }: { children: React.ReactNode }) {
+  const pathName = usePathname();
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -47,7 +51,7 @@ function ContactForm({ children }: { children: React.ReactNode }) {
               />
               <Button
                 type="submit"
-                className="bg-[#22c55e]/70 hover:bg-[#22c55e] mt-4"
+                className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/70 hover:bg-[#22c55e]' : 'bg-blue-500/50 hover:bg-blue-500/80'} mt-4 cursor-pointer`}
               >
                 Send
               </Button>
