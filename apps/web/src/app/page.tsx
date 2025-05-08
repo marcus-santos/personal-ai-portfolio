@@ -46,7 +46,7 @@ export default function Home() {
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <div className="p-2 text-center bg-slate-500/50 group-hover:bg-blue-500/50 transition-colors duration-200">
+            <div className="p-2 text-center bg-slate-500/50 group-hover:bg-violet-500/50 transition-colors duration-200">
               <h3 className="text-sm font-semibold text-gray-800">
                 Lukas Campos
               </h3>
