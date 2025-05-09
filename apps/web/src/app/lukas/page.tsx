@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageInput } from '@/components/ui/message-input';
+import { MessageInput } from '@/app/components/message-input';
 import Header from '../components/Header';
 
 function page() {
