@@ -51,7 +51,7 @@ function ContactForm({ children }: { children: React.ReactNode }) {
               />
               <Button
                 type="submit"
-                className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/70 hover:bg-[#22c55e]' : 'bg-blue-500/50 hover:bg-blue-500/80'} mt-4 cursor-pointer`}
+                className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/70 hover:bg-[#22c55e]' : 'bg-violet-500/50 hover:bg-violet-500/80'} mt-4 cursor-pointer`}
               >
                 Send
               </Button>
