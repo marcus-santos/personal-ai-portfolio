@@ -19,7 +19,7 @@ function page() {
           <h1 className="text-3xl font-semibold mb-3">FEATURED PROJECTS</h1>
           <p className="text-white/80 text-[18px]">
             Here are some of the selected projects that showcase my passion
-            developing personalizes solution on back or frontend
+            developing personalized solution on back or frontend
           </p>
         </div>
         <div className="w-full flex justify-center">

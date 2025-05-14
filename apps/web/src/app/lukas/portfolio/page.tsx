@@ -5,14 +5,14 @@ function page() {
   return (
     <div className="w-screen h-full flex flex-col justify-center">
       <Header
-        title={'marcus-santos'}
-        titleRef={'/marcus'}
-        portfolioRef={'./lukas/portfolio'}
-        resumeRef={'marcus/resume'}
-        transfer={'/marcus/portfolio'}
-        githubRef={'https://www.github.com/marcus-santos'}
-        linkedInRef={'https://www.linkedin.com/in/marcus-vinicius-csantos'}
-        instagramRef={'https://www.instagram.com/marcus.csantos/'}
+        title={'lukascampos'}
+        titleRef={'/lukas'}
+        portfolioRef={'/lukas/portfolio'}
+        resumeRef={'lukas/resume'}
+        transfer={'/marcus'}
+        githubRef={'https://www.github.com/lukascampos'}
+        linkedInRef={'https://www.linkedin.com/in/lukas-campos'}
+        instagramRef={'https://www.instagram.com/lukasg_campos/'}
       />
       <main className="w-2/3 px-8 flex flex-col m-auto">
         <div className="py-17 w-xl">
