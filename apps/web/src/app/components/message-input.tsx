@@ -60,12 +60,15 @@ export function MessageInput({
               placeholder={placeholder}
               disabled={disabled}
               aria-label="Write your message"
+              maxLength={150}
               style={{
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(255, 255, 255, 0.3)',
+                wordBreak: 'break-word',
+                overflow: 'hidden',
               }}
               className={cn(
-                'z-10 flex-1 resize-none max-h-[200px] min-h-[60px] p-3 pr-14',
+                'z-10 w-full resize-none max-h-[200px] min-h-[60px] p-3 pr-14',
                 'focus-visible:ring-0',
                 'placeholder:text-white/60',
                 'border',
@@ -83,7 +86,7 @@ export function MessageInput({
             disabled={!message.trim() || disabled}
             aria-label="Send message"
             className={cn(
-              'rounded-md bg-white text-[#1e1e1e]',
+              'rounded-md bg-white text-[#1e1e1e] cursor-pointer',
               'hover:bg-white/90 transition-opacity',
               'disabled:pointer-events-none disabled:opacity-50',
               'flex items-center justify-center',
