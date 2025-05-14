@@ -48,13 +48,13 @@ function Header({
         </Link>
         <nav className="text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
           <Link
-            className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-blue-500 transition'}`}
+            className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             href={portfolioRef}
           >
             Portfolio
           </Link>
           <Link
-            className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-blue-500 transition'}`}
+            className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             href={resumeRef}
           >
             Resume
@@ -62,7 +62,7 @@ function Header({
           <ContactForm>
             <Button
               variant={'link'}
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-blue-500 transition'} transition cursor-pointer p-0`}
+              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
             >
               Contact
             </Button>
@@ -72,25 +72,25 @@ function Header({
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link
           href={transfer}
-          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaRegUser size={18} />
         </Link>
         <Link
           href={githubRef}
-          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaGithub size={18} />
         </Link>
         <Link
           href={linkedInRef}
-          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaLinkedinIn size={18} />
         </Link>
         <Link
           href={instagramRef}
-          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-blue-500/50 transition'} p-2 hover:rounded transition`}
+          className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
         >
           <FaInstagram size={18} />
         </Link>
