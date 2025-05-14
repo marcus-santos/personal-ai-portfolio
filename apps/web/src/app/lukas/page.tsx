@@ -13,7 +13,7 @@ function page() {
       <Header
         title={'lukascampos'}
         titleRef={'/lukas'}
-        portfolioRef={'/portfolio'}
+        portfolioRef={'/lukas/portfolio'}
         resumeRef={'lukas/resume'}
         transfer={'/marcus'}
         githubRef={'https://www.github.com/lukascampos'}
