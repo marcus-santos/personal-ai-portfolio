@@ -4,27 +4,49 @@ import { marcus } from '@/app/types/header-user';
 
 function page() {
   return (
-    <div className="w-screen h-full flex flex-col justify-center">
+    <div className="w-full h-full flex flex-col justify-center">
       <Header {...marcus} />
-      <main className="w-2/3 px-8 flex flex-col m-auto">
+      <main className="w-2/3 px-8 flex flex-col m-auto ">
         <div className="py-17 w-xl">
           <h1 className="text-3xl font-semibold mb-3">FEATURED PROJECTS</h1>
           <p className="text-white/80 text-[18px]">
-            Here are some of the selected projects that showcase my passion
-            developing personalized solution on back or frontend
+            Here are some selected projects that reflect my passion for
+            developing personalized solutions, both on the front end and back
+            end.
           </p>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="flex flex-col">
+          <ProjectCard
+            tag={'Extension Project'}
+            title={'Criarte – Handcrafted Marketplace'}
+            description={`This project is an e-commerce platform aimed at artisans, with the goal of valuing handcrafted work and local culture. 
+              The concept goes beyond a traditional online store — the system integrates social networking features, allowing each artisan
+              to publish their products and also share their personal story.Through this, visitors to the platform not only discover unique
+              handmade items, but also learn about the context, journey, and inspirations behind each piece. The platform fosters a connection 
+              between the public and the artists, encouraging conscious consumption and cultural recognition. `}
+            imageUrl={'/artesaos-project.svg'}
+            year={'2025'}
+            role={'Front-end Developer'}
+            viewButton={true}
+            githubButtonRef={
+              'https://github.com/marcus-santos/artesaos-project-frontend'
+            }
+            viewButtonRef={'https://astesaos-project.vercel.app/'}
+          />
           <ProjectCard
             tag={'Conceptual Work'}
             title={'Promotional landing page for our favorite show'}
-            description={
-              'Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.'
-            }
-            imageUrl={'/images/marcus-santos.jpg'}
-            year={'2023'}
+            description={`This project is an e-commerce platform aimed at artisans, with the goal of valuing handcrafted work and local culture. 
+              The concept goes beyond a traditional online store — the system integrates social networking features, allowing each artisan
+              to publish their products and also share their personal story.Through this, visitors to the platform not only discover unique
+              handmade items, but also learn about the context, journey, and inspirations behind each piece. The platform fosters a connection 
+              between the public and the artists, encouraging conscious consumption and cultural recognition. `}
+            imageUrl={'/artesaos-project.svg'}
+            year={'2025'}
             role={'Back-end Developer'}
             viewButton={true}
+            githubButtonRef={''}
+            viewButtonRef={''}
           />
         </div>
       </main>

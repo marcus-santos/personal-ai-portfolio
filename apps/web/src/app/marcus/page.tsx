@@ -6,7 +6,7 @@ import { marcus } from '../types/header-user';
 
 function page() {
   return (
-    <div className="w-screen h-full flex flex-col justify-center">
+    <div className="w-full h-full flex flex-col justify-center">
       <Header {...marcus} />
       <main className="w-2/3 py-10 px-8 flex justify-center">
         <div className="w-1/2 py-12 px-4">

@@ -10,7 +10,7 @@ function page() {
   };
 
   return (
-    <div className="w-screen h-full">
+    <div className="w-full h-full">
       <Header {...lukas} />
       <div className="flex items-center justify-center p-4 absolute bottom-0 w-full">
         <div className="w-full max-w-2xl">
