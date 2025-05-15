@@ -1,19 +1,11 @@
 import Header from '@/app/components/Header';
 import ProjectCard from '@/app/components/ProjectCard';
+import { lukas } from '@/app/types/header-user';
 
 function page() {
   return (
     <div className="w-screen h-full flex flex-col justify-center">
-      <Header
-        title={'lukascampos'}
-        titleRef={'/lukas'}
-        portfolioRef={'/lukas/portfolio'}
-        resumeRef={'lukas/resume'}
-        transfer={'/marcus'}
-        githubRef={'https://www.github.com/lukascampos'}
-        linkedInRef={'https://www.linkedin.com/in/lukas-campos'}
-        instagramRef={'https://www.instagram.com/lukasg_campos/'}
-      />
+      <Header {...lukas} />
       <main className="w-2/3 px-8 flex flex-col m-auto">
         <div className="py-17 w-xl">
           <h1 className="text-3xl font-semibold mb-3">FEATURED PROJECTS</h1>

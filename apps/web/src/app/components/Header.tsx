@@ -3,14 +3,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
-import { Dialog, DialogHeader } from '@/components/ui/dialog';
-import {
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '@radix-ui/react-dialog';
 import { usePathname } from 'next/navigation';
 import ContactForm from './ContactForm';
 
@@ -38,7 +30,7 @@ function Header({
   const pathName = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-[1472px] h-14 px-8 flex m-auto">
+    <header className="sticky top-0 z-50 w-full max-w-[1472px] h-14 px-8 flex m-auto">
       <div className="flex h-full">
         <Link
           className="text-lg my-3 mr-10 font-semibold whitespace-nowrap"
