@@ -45,12 +45,13 @@ function Header({
           >
             Portfolio
           </Link>
-          <Link
+          <a
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+            download
             href={resumeRef}
           >
             Resume
-          </Link>
+          </a>
           <ContactForm>
             <Button
               variant={'link'}
