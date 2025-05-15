@@ -3,14 +3,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
-import { Dialog, DialogHeader } from '@/components/ui/dialog';
-import {
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '@radix-ui/react-dialog';
 import { usePathname } from 'next/navigation';
 import ContactForm from './ContactForm';
 
@@ -53,12 +45,13 @@ function Header({
           >
             Portfolio
           </Link>
-          <Link
+          <a
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+            download
             href={resumeRef}
           >
             Resume
-          </Link>
+          </a>
           <ContactForm>
             <Button
               variant={'link'}

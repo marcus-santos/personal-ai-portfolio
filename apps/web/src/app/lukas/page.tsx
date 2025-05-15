@@ -14,13 +14,15 @@ function page() {
         title={'lukascampos'}
         titleRef={'/lukas'}
         portfolioRef={'/lukas/portfolio'}
-        resumeRef={'lukas/resume'}
+        resumeRef={
+          'https://drive.usercontent.google.com/download?id=1440eo0Mr_oz4KCzquBpwnyQHa7Cso2_V&export=download'
+        }
         transfer={'/marcus'}
         githubRef={'https://www.github.com/lukascampos'}
         linkedInRef={'https://www.linkedin.com/in/lukas-campos'}
         instagramRef={'https://www.instagram.com/lukasg_campos/'}
       />
-      <div className="flex items-center justify-center p-4">
+      <div className="flex items-center justify-center p-4 absolute bottom-0 w-full">
         <div className="w-full max-w-2xl">
           <MessageInput onSendMessage={handleSendMessage} />
         </div>
