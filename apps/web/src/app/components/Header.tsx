@@ -33,7 +33,7 @@ function Header({
     <header className="sticky top-0 z-50 w-full max-w-[1472px] h-14 px-8 flex m-auto bg-[#1e1e1e]">
       <div className="flex h-full">
         <Link
-          className="text-lg my-3 mr-10 font-semibold whitespace-nowrap"
+          className="text-lg my-3 mr-10 font-semibold whitespace-nowrap hover:scale-110 transition"
           href={titleRef}
         >
           {title}
