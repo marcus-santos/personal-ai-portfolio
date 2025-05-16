@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { SendIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { useAutosizeTextArea } from '@/hooks/use-autosize-textarea';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -14,20 +15,16 @@ interface ChatInputProps {
 export function MessageInput({
   onSendMessage,
   placeholder = 'Type a message...',
-  className,
   disabled = false,
 }: ChatInputProps) {
   const [message, setMessage] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
-
-    textarea.style.height = 'auto';
-    const newHeight = Math.min(textarea.scrollHeight, 200);
-    textarea.style.height = `${newHeight}px`;
-  }, [message]);
+  useAutosizeTextArea({
+    ref: textareaRef as React.RefObject<HTMLTextAreaElement>,
+    maxHeight: 60,
+    dependencies: [message],
+  });
 
   const handleSendMessage = () => {
     if (message.trim() && !disabled) {
@@ -60,7 +57,7 @@ export function MessageInput({
               placeholder={placeholder}
               disabled={disabled}
               aria-label="Write your message"
-              maxLength={150}
+              maxLength={160}
               style={{
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -68,7 +65,7 @@ export function MessageInput({
                 overflow: 'hidden',
               }}
               className={cn(
-                'z-10 w-full resize-none max-h-[200px] min-h-[60px] p-3 pr-14',
+                'z-10 w-full resize-none max-h-[250px] min-h-[70px] p-3 pr-14',
                 'focus-visible:ring-0',
                 'placeholder:text-white/60',
                 'border',
@@ -78,7 +75,7 @@ export function MessageInput({
           </div>
         </div>
 
-        <div className="absolute right-3 top-3 z-20 flex gap-2">
+        <div className="absolute right-3 top-4 z-20 flex gap-2">
           <Button
             type="button"
             size="icon"

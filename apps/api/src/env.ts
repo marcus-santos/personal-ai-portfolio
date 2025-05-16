@@ -3,9 +3,13 @@ import 'dotenv/config';
 
 const envSchema = z.object({
   PORT: z.coerce.number().optional().default(3333),
-  OPENAI_API_KEY: z.string(),
-  OPEN_API_ASSISTANT_ID: z.string(),
-  OPEN_API_ASSISTANT_CONTEXT: z.string(),
+  CORS_URL: z.string().optional().default('http://localhost:3000'),
+  OPENAI_API_LUKAS_KEY: z.string(),
+  OPEN_API_LUKAS_ASSISTANT_ID: z.string(),
+  OPEN_API_LUKAS_ASSISTANT_CONTEXT: z.string(),
+  OPENAI_MARCUS_API_KEY: z.string(),
+  OPEN_API_MARCUS_ASSISTANT_ID: z.string(),
+  OPEN_API_MARCUS_ASSISTANT_CONTEXT: z.string(),
 });
 
 const envParsed = envSchema.safeParse(process.env);

@@ -23,9 +23,10 @@
     "config/*"
   ],
   "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "ai": "^4.3.9",
     "framer-motion": "^11.18.2",
     "react-icons": "^5.5.0",
-    "remeda": "^2.21.3",
-    "ai": "^4.3.9"
+    "remeda": "^2.21.3"
   }
 }
