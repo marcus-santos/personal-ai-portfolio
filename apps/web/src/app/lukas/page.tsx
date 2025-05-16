@@ -1,22 +1,12 @@
-'use client';
-
-import { MessageInput } from '@/app/components/message-input';
 import Header from '../components/Header';
 import { lukas } from '../types/header-user';
+import { ChatWindow } from '../components/ChatWindow';
 
 function page() {
-  const handleSendMessage = (message: string) => {
-    console.log('Message sent:', message);
-  };
-
   return (
-    <div className="w-full h-full">
+    <div className="flex flex-col h-screen">
       <Header {...lukas} />
-      <div className="flex items-center justify-center p-4 absolute bottom-0 w-full">
-        <div className="w-full max-w-2xl">
-          <MessageInput onSendMessage={handleSendMessage} />
-        </div>
-      </div>
+      <ChatWindow api={'http://localhost:3333/lukas'} />
     </div>
   );
 }
