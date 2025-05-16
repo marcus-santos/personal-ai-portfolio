@@ -5,7 +5,17 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "PORT",
+        "CORS_URL",
+        "OPENAI_API_LUKAS_KEY",
+        "OPEN_API_LUKAS_ASSISTANT_ID",
+        "OPEN_API_LUKAS_ASSISTANT_CONTEXT",
+        "OPENAI_MARCUS_API_KEY",
+        "OPEN_API_MARCUS_ASSISTANT_ID",
+        "OPEN_API_MARCUS_ASSISTANT_CONTEXT"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
