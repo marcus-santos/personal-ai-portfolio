@@ -10,6 +10,10 @@ fastify.register(cors, {
   strictPreflight: false,
 });
 
+fastify.get('/', async (request, reply) => reply.send({
+  message: 'Hello from the API!',
+}));
+
 fastify.post('/lukas', async (request, reply) => {
   const response = await lukas(request.body.message, request.body.threadId);
 
