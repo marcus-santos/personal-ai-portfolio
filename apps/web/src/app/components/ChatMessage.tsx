@@ -1,10 +1,12 @@
 import { cn } from '@/lib/utils';
+import TypingIndicator from './TypingIndicator';
 
 interface ChatMessageProps {
   role: 'user' | 'assistant';
-  content: string;
+  content?: string;
   id?: string;
   className?: string;
+  loading?: boolean;
 }
 
 export function ChatMessage({
@@ -12,8 +14,17 @@ export function ChatMessage({
   content,
   id,
   className,
+  loading,
 }: ChatMessageProps) {
   const isUser = role === 'user';
+
+  if (loading) {
+    return (
+      <div className="flex justify-start items-center bg-primary-foreground text-muted-foreground rounded-lg px-4 py-2 text-black w-fit h-8">
+        <TypingIndicator />
+      </div>
+    );
+  }
 
   return (
     <div

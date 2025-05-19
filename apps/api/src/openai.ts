@@ -56,7 +56,7 @@ export async function lukas(question: string, threadId?: string) {
 }
 
 const openaiMarcus = new OpenAI({
-  apiKey: env.OPENAI_MARCUS_API_KEY,
+  apiKey: env.OPENAI_API_MARCUS_KEY,
 });
 
 export async function marcus(question: string, threadId?: string) {
