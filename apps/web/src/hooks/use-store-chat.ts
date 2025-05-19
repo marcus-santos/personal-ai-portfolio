@@ -14,7 +14,7 @@ const useStoreMarcusChat = create<ChatStore>()(
       clearChat: () => set({ threadId: null, messages: [] }),
     }),
     {
-      name: 'chat-storage',
+      name: 'chat-marcus-storage',
     },
   ),
 );
@@ -31,7 +31,7 @@ const useStoreLukasChat = create<ChatStore>()(
       clearChat: () => set({ threadId: null, messages: [] }),
     }),
     {
-      name: 'chat-storage',
+      name: 'chat-lukas-storage',
     },
   ),
 );
