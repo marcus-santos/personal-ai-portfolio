@@ -5,6 +5,17 @@ import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import ContactForm from './ContactForm';
+import {
+  SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetClose,
+} from '@/components/ui/sheet';
+import { RiMenu2Fill } from 'react-icons/ri';
+import { useState } from 'react';
 
 interface HeaderProps {
   title: string;
@@ -28,17 +39,59 @@ function Header({
   instagramRef,
 }: HeaderProps) {
   const pathName = usePathname();
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full max-w-[1472px] h-14 px-8 flex m-auto bg-[#1e1e1e]">
       <div className="flex h-full">
+        <Sheet>
+          <SheetTrigger className="sm:hidden">
+            <RiMenu2Fill size={18} />
+          </SheetTrigger>
+          <SheetContent side="left" className="bg-primary">
+            <SheetHeader>
+              <SheetTitle>
+                <Link
+                  className="text-lg my-3 mr-10 text-white/90 font-semibold whitespace-nowrap hover:scale-110 transition"
+                  href={titleRef}
+                >
+                  {title}
+                </Link>
+              </SheetTitle>
+              <SheetDescription className="flex flex-col p-5 items-start text-sm font-medium text-white/90 my-auto gap-y-5 whitespace-nowrap">
+                <Link
+                  className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                  href={portfolioRef}
+                >
+                  Portfolio
+                </Link>
+                <a
+                  className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                  download
+                  href={resumeRef}
+                >
+                  Resume
+                </a>
+                <SheetClose asChild>
+                  <button
+                    type="button"
+                    className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
+                    onClick={() => setContactOpen(true)}
+                  >
+                    Contact
+                  </button>
+                </SheetClose>
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
         <Link
-          className="text-lg my-3 mr-10 font-semibold whitespace-nowrap hover:scale-110 transition"
+          className="hidden sm:block text-lg my-3 mr-10 font-semibold whitespace-nowrap hover:scale-110 transition"
           href={titleRef}
         >
           {title}
         </Link>
-        <nav className="text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
+        <nav className="hidden sm:block text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
           <Link
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             href={portfolioRef}
@@ -52,15 +105,15 @@ function Header({
           >
             Resume
           </a>
-          <ContactForm>
-            <Button
-              variant={'link'}
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
-            >
-              Contact
-            </Button>
-          </ContactForm>
+          <Button
+            onClick={() => setContactOpen(true)}
+            variant={'link'}
+            className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
+          >
+            Contact
+          </Button>
         </nav>
+        <ContactForm open={contactOpen} onOpenChange={setContactOpen} />
       </div>
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link

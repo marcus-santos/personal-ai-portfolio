@@ -12,11 +12,16 @@ import {
   DialogTrigger,
 } from '@radix-ui/react-dialog';
 
-function ContactForm({ children }: { children: React.ReactNode }) {
+function ContactForm({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const pathName = usePathname();
   return (
-    <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="fixed inset-0 flex items-center justify-center bg-black/50">
         <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
           <DialogHeader>
