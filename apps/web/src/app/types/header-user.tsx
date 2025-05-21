@@ -13,7 +13,8 @@ const marcus: headerUser = {
   title: 'marcus-santos',
   titleRef: '/marcus',
   portfolioRef: '/marcus/portfolio',
-  resumeRef: '"C:\Users\cg3028518\Downloads\Documento sem título.pdf"',
+  resumeRef:
+    'https://drive.google.com/file/d/1CzSV3Y3U8ArzGAYWWkQ7esQF7itGF5KZ/view?usp=drive_link',
   transfer: '/lukas',
   githubRef: 'https://www.github.com/marcus-santos',
   linkedInRef: 'https://www.linkedin.com/in/marcus-vinicius-csantos',
