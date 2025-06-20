@@ -1,15 +1,17 @@
-import Header from '../../components/Header';
 import ProjectCard from '../../components/ProjectCard';
+import Header from '../../components/Header';
 import { marcus } from '@/app/types/header-user';
 
 function page() {
   return (
     <div className="w-full h-full flex flex-col justify-center">
       <Header {...marcus} />
-      <main className="w-2/3 px-8 flex flex-col m-auto ">
-        <div className="py-17 w-xl">
-          <h1 className="text-3xl font-semibold mb-3">FEATURED PROJECTS</h1>
-          <p className="text-white/80 text-[18px]">
+      <main className="md:w-4/5 lg:w-2/3 md:px-8 flex flex-col m-auto">
+        <div className="py-17 w-4/5 mx-auto md:w-full md:m-0">
+          <h1 className="text-3xl font-semibold mb-3 text-center sm:text-start">
+            FEATURED PROJECTS
+          </h1>
+          <p className="text-white/80 lg:w-1/2">
             Here are some selected projects that reflect my passion for
             developing personalized solutions, both on the front end and back
             end.
