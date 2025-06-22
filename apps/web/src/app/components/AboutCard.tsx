@@ -18,7 +18,7 @@ function AboutCard({
   endYear,
 }: AboutCardProps) {
   return (
-    <div className="flex flex-col md:flex-row min-w-[250px] max-w-[250px] md:min-w-[420px] md:max-w-[620px] h-fit bg-white/10 rounded-xl p-5 mb-5">
+    <div className="flex flex-col md:flex-row min-w-[250px] max-w-[250px] md:min-w-[420px] md:max-w-[620px] h-fit bg-white/5 rounded-xl p-5 mb-5">
       <div className="flex items-center justify-center min-w-[50px] min-h-[50px] pb-5 md:pb-0 mr-5">
         <Image
           src={imageUrl}

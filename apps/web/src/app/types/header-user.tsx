@@ -1,6 +1,7 @@
 interface headerUser {
   title: string;
   titleRef: string;
+  chatRef: string;
   portfolioRef: string;
   aboutRef: string;
   transfer: string;
@@ -12,6 +13,7 @@ interface headerUser {
 const marcus: headerUser = {
   title: 'marcus-santos',
   titleRef: '/marcus',
+  chatRef: '/marcus/chat',
   portfolioRef: '/marcus/portfolio',
   aboutRef: '/marcus/about',
   transfer: '/lukas',
@@ -23,6 +25,7 @@ const marcus: headerUser = {
 const lukas: headerUser = {
   title: 'lukascampos',
   titleRef: '/lukas',
+  chatRef: '/lukas/chat',
   portfolioRef: '/lukas/portfolio',
   aboutRef:
     'https://drive.usercontent.google.com/download?id=1440eo0Mr_oz4KCzquBpwnyQHa7Cso2_V&export=download',

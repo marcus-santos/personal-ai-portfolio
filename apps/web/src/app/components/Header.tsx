@@ -20,6 +20,7 @@ import { useState } from 'react';
 interface HeaderProps {
   title: string;
   titleRef: string;
+  chatRef: string;
   portfolioRef: string;
   aboutRef: string;
   transfer: string;
@@ -31,6 +32,7 @@ interface HeaderProps {
 function Header({
   title,
   titleRef,
+  chatRef,
   portfolioRef,
   aboutRef,
   transfer,
@@ -42,7 +44,7 @@ function Header({
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <div className="bg-[#1e1e1e]/95 sticky top-0 z-50">
+    <div className="bg-[#121214]/90 sticky top-0 z-50">
       <header className=" w-full max-w-[1472px] h-14 px-8 flex mx-auto ">
         <div className="flex h-full">
           <Sheet>
@@ -60,6 +62,12 @@ function Header({
                   </Link>
                 </SheetTitle>
                 <SheetDescription className="flex flex-col p-5 items-start text-sm font-medium text-white/90 my-auto gap-y-5 whitespace-nowrap">
+                  <Link
+                    className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                    href={chatRef}
+                  >
+                    Chat
+                  </Link>
                   <Link
                     className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
                     href={portfolioRef}
@@ -92,6 +100,12 @@ function Header({
             {title}
           </Link>
           <nav className="hidden sm:block text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
+            <Link
+              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+              href={chatRef}
+            >
+              Chat
+            </Link>
             <Link
               className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
               href={portfolioRef}

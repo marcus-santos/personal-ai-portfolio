@@ -14,18 +14,19 @@ function ChatSuggestedPrompts({
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
       <h1 className="my-20 text-lg text-center font-semibold">
-        👋 Hi! I’m Marcus and this is my chatbot, here to help you learn more
-        about my career, skills, and projects.
-        <br />
-        <br />
-        Try one of these Prompts
+        👋 Hey, I’m MarcusBot!
       </h1>
+      <p>
+        I'm here to help you learn more about Marcus’s work, skills, and
+        academic background.
+      </p>
+      <p>Not sure what to ask? Start here:</p>
       <div className="flex flex-col sm:flex-row items-center gap-4 justify-around w-full">
         {suggestedPrompts.map((prompt, idx) => (
           <Button
             key={idx}
             onClick={() => onPromptClick(prompt)}
-            className="w-full sm:max-w-[25%] p-5 h-fit break-words whitespace-pre-wrap text-sm cursor-pointer"
+            className="w-full sm:max-w-[25%] p-5 h-fit break-words whitespace-pre-wrap bg-white/5 text-sm cursor-pointer"
           >
             <p>{prompt}</p>
           </Button>
