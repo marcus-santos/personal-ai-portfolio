@@ -96,7 +96,7 @@ function ContactForm({
               />
               <input
                 className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
-                placeholder="Subject"
+                placeholder="Email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
