@@ -66,7 +66,7 @@ function ContactForm({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="fixed inset-0 flex items-center justify-center bg-black/50">
-        <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
+        <div className="bg-neutral-800 p-6 rounded-lg shadow-lg w-sm text-white/80">
           <DialogHeader>
             <div className="flex justify-between">
               <DialogTitle className="text-xl">Contact Me</DialogTitle>
@@ -81,7 +81,7 @@ function ContactForm({
           <div className="flex flex-col gap-4">
             <form className="w-full m-1 flex flex-col space-y-5">
               <input
-                className="w-full p-2 border border-neutral-400 rounded"
+                className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
                 placeholder="Name"
                 type="text"
                 value={name}
@@ -95,14 +95,14 @@ function ContactForm({
                 onChange={(e) => setSubject(e.target.value)}
               />
               <input
-                className="w-full p-2 border border-neutral-400 rounded"
-                placeholder="Email"
+                className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
+                placeholder="Subject"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <textarea
-                className="w-full size-40 resize-none p-2 border border-neutral-400 rounded"
+                className="w-full size-40 resize-none p-2 border border-neutral-400 rounded placeholder:text-sm"
                 placeholder="Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

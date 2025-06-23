@@ -1,3 +1,5 @@
+'use client';
+
 import Header from '@/app/components/Header';
 import { marcus } from '@/app/types/header-user';
 import { Button } from '@/components/ui/button';
@@ -10,13 +12,19 @@ import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
 import AboutCard from '@/app/components/AboutCard';
 import Link from 'next/link';
 import Footer from '@/app/components/Footer';
+import { motion } from 'framer-motion';
 
 function page() {
   return (
     <div className="flex flex-col">
       <Header {...marcus} />
       <main className="w-2/3 flex flex-col mx-auto py-20">
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-15 items-center pb-10 border-b-2 border-neutral-700">
+        <motion.section
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-15 items-center pb-10 border-b-2 border-neutral-700"
+        >
           <div className="flex justify-center w-full h-full mx-auto relative min-h-[250px]">
             <Image
               fill
@@ -56,8 +64,13 @@ function page() {
               </a>
             </Button>
           </div>
-        </section>
-        <section className="py-20 border-b-2 border-neutral-700">
+        </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="py-20 border-b-2 border-neutral-700"
+        >
           <h2 className="text-2xl font-semibold mb-1 text-center">
             MY TECH STACK
           </h2>
@@ -108,8 +121,13 @@ function page() {
               className="min-w-[50px] min-h-[50px]"
             />
           </div>
-        </section>
-        <section className="py-20 border-b-2 border-neutral-700">
+        </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="py-20 border-b-2 border-neutral-700"
+        >
           <h2 className="text-2xl font-semibold mb-1 text-center">
             LEARNING PATH
           </h2>
@@ -141,8 +159,13 @@ function page() {
             </div>
             <div className="flex flex-col mx-auto gap-5" />
           </div>
-        </section>
-        <section className="py-20">
+        </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+          className="py-20"
+        >
           <h2 className="text-2xl font-semibold mb-1">MY EXPERIENCE</h2>
           <p className="text-white/80">
             Take a look at my professional journey timeline.
@@ -187,7 +210,7 @@ function page() {
               />
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </div>
