@@ -6,6 +6,8 @@ const resend = new Resend(
   env.RESEND_API_KEY,
 );
 
+const email = env.RESEND_EMAIL;
+
 export async function sendEmail(
   name: string,
   sender: string,
@@ -15,7 +17,7 @@ export async function sendEmail(
   try {
     const { data, error } = await resend.emails.send({
       from: `${name} <onboarding@resend.dev>`,
-      to: 'marcuscruzsantos27@gmail.com',
+      to: email,
       subject: emailSubject,
       replyTo: sender,
       text: content,
