@@ -21,7 +21,7 @@ interface HeaderProps {
   title: string;
   titleRef: string;
   portfolioRef: string;
-  resumeRef: string;
+  aboutRef: string;
   transfer: string;
   githubRef: string;
   linkedInRef: string;
@@ -32,7 +32,7 @@ function Header({
   title,
   titleRef,
   portfolioRef,
-  resumeRef,
+  aboutRef,
   transfer,
   githubRef,
   linkedInRef,
@@ -68,9 +68,9 @@ function Header({
                 <a
                   className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
                   download
-                  href={resumeRef}
+                  href={aboutRef}
                 >
-                  Resume
+                  About
                 </a>
                 <SheetClose asChild>
                   <button
@@ -101,9 +101,9 @@ function Header({
           <a
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             download
-            href={resumeRef}
+            href={aboutRef}
           >
-            Resume
+            About
           </a>
           <Button
             onClick={() => setContactOpen(true)}

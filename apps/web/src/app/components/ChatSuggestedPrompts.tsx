@@ -13,7 +13,13 @@ function ChatSuggestedPrompts({
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <h1 className="my-10 text-2xl font-semibold">Try these Prompts</h1>
+      <h1 className="my-20 text-lg text-center font-semibold">
+        👋 Hi! I’m Marcus and this is my chatbot, here to help you learn more
+        about my career, skills, and projects.
+        <br />
+        <br />
+        Try one of these Prompts
+      </h1>
       <div className="flex flex-col sm:flex-row items-center gap-4 justify-around w-full">
         {suggestedPrompts.map((prompt, idx) => (
           <Button

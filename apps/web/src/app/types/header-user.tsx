@@ -2,7 +2,7 @@ interface headerUser {
   title: string;
   titleRef: string;
   portfolioRef: string;
-  resumeRef: string;
+  aboutRef: string;
   transfer: string;
   githubRef: string;
   linkedInRef: string;
@@ -13,8 +13,7 @@ const marcus: headerUser = {
   title: 'marcus-santos',
   titleRef: '/marcus',
   portfolioRef: '/marcus/portfolio',
-  resumeRef:
-    'https://drive.google.com/file/d/1CzSV3Y3U8ArzGAYWWkQ7esQF7itGF5KZ/view?usp=drive_link',
+  aboutRef: '/marcus/about',
   transfer: '/lukas',
   githubRef: 'https://www.github.com/marcus-santos',
   linkedInRef: 'https://www.linkedin.com/in/marcus-vinicius-csantos',
@@ -25,7 +24,7 @@ const lukas: headerUser = {
   title: 'lukascampos',
   titleRef: '/lukas',
   portfolioRef: '/lukas/portfolio',
-  resumeRef:
+  aboutRef:
     'https://drive.usercontent.google.com/download?id=1440eo0Mr_oz4KCzquBpwnyQHa7Cso2_V&export=download',
   transfer: '/marcus',
   githubRef: 'https://www.github.com/lukascampos',
@@ -34,3 +33,5 @@ const lukas: headerUser = {
 };
 
 export { marcus, lukas };
+
+// 'https://drive.google.com/file/d/1CzSV3Y3U8ArzGAYWWkQ7esQF7itGF5KZ/view?usp=drive_link'
