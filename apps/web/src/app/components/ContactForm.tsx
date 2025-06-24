@@ -29,7 +29,7 @@ function ContactForm({
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [notification, setNotification] = useState(true);
+  const [notification, setNotification] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
