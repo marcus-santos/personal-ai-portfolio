@@ -79,7 +79,7 @@ export function ChatWindow({ api }: ChatWindowProps) {
         {isLoading && <ChatMessage loading={true} role={'assistant'} />}
       </div>
       <div className="fixed bottom-0 left-0 w-full flex justify-center z-10">
-        <div className="w-screen bg-[#1e1e1e] flex justify-center">
+        <div className="w-screen bg-[#121214] flex justify-center">
           <div className="w-full max-w-3xl flex border-t p-4 justify-items-center">
             <div className="w-full max-w-2xl mx-auto">
               <MessageInput onSendMessage={handleSendMessage} />
