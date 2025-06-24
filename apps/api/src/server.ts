@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { env } from './env';
 import { lukas, marcus } from './openai';
+import { sendEmail } from './resend';
 
 const fastify = Fastify();
 
@@ -22,6 +23,17 @@ fastify.post('/lukas', async (request, reply) => {
 
 fastify.post('/marcus', async (request, reply) => {
   const response = await marcus(request.body.message, request.body.threadId);
+
+  return reply.send(response);
+});
+
+fastify.post('/contact', async (request, reply) => {
+  const response = await sendEmail(
+    request.body.name,
+    request.body.sender,
+    request.body.emailSubject,
+    request.body.content,
+  );
 
   return reply.send(response);
 });

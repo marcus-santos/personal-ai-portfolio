@@ -113,7 +113,11 @@ function Header({
             Contact
           </Button>
         </nav>
-        <ContactForm open={contactOpen} onOpenChange={setContactOpen} />
+        <ContactForm
+          api={'http://localhost:3333/contact'}
+          open={contactOpen}
+          onOpenChange={setContactOpen}
+        />
       </div>
       <div className="flex justify-end w-full my-auto space-x-2">
         <Link
