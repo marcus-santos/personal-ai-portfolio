@@ -1,4 +1,4 @@
-import { ChatStore } from '@/app/types/chat-store';
+import { ChatStore } from '@/app/[locale]/types/chat-store';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
