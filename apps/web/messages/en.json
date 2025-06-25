@@ -1,0 +1,50 @@
+{
+  "Header": {
+    "portfolio": "Portfolio",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+
+  "Chat": {
+    "title": "Try these Prompts",
+    "placeholder": "Type a message...",
+    "error": "Error looking for the answer.",
+    "suggestedQuestions": {
+      "first": "Tell me about a project that you are really proud of",
+      "second": "What are your main skills as a fullstack developer?",
+      "third": "What companies or projects have you worked on?"
+    }
+  },
+
+  "Portfolio": {
+    "title": "FEATURED PROJECTS",
+    "subtitle": "Here are some selected projects that reflect my passion for developing personalized solutions, both on the front end and back end.",
+    "cardInfo": "PROJECT INFO",
+    "yearPlaceholder": "Year",
+    "rolePlaceholder": "Role",
+    "card": {
+      "one": {
+        "tag": "Extension Project",
+        "title": "Criarte – Handcrafted Marketplace",
+        "description": "This project is an e-commerce platform aimed at artisans, with the goal of valuing handcrafted work and local culture. The concept goes beyond a traditional online store — the system integrates social networking features, allowing each artisan to publish their products and also share their personal story. Through this, visitors to the platform not only discover unique handmade items, but also learn about the context, journey, and inspirations behind each piece. The platform fosters a connection between the public and the artists, encouraging conscious consumption and cultural recognition.",
+        "role": "Front-end Developer"
+      }
+    },
+    "projectButton": "View Project",
+    "githubButton": "See on GitHub"
+  },
+
+  "Contact": {
+    "title": "Contact Me",
+    "subtitle": "Fill out the form below to get in touch.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendButton": {
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "notification": "Message sent successfully!"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "Header": {
+    "portfolio": "Portfólio",
+    "resume": "Currículo",
+    "contact": "Contato"
+  },
+
+  "Chat": {
+    "title": "Experimente estes prompts",
+    "placeholder": "Digite uma mensagem...",
+    "error": "Erro ao buscar a resposta.",
+    "suggestedQuestions": {
+      "first": "Conte-me sobre um projeto do qual você se orgulha bastante",
+      "second": "Quais são suas principais habilidades como desenvolvedor fullstack?",
+      "third": "Em quais empresas ou projetos você já trabalhou?"
+    }
+  },
+
+  "Portfolio": {
+    "title": "PROJETOS EM DESTAQUE",
+    "subtitle": "Aqui estão alguns projetos selecionados que refletem minha paixão por desenvolver soluções personalizadas, tanto no front-end quanto no back-end.",
+    "cardInfo": "SOBRE O PROJETO",
+    "yearPlaceholder": "Ano",
+    "rolePlaceholder": "Função",
+    "card": {
+      "one": { 
+        "tag": "Projeto de Extensão",
+        "title": "Criarte – Marketplace Artesanal",
+        "description": "Este projeto é uma plataforma de e-commerce voltada para artesãos, com o objetivo de valorizar o trabalho artesanal e a cultura local. O conceito vai além de uma loja virtual tradicional — o sistema integra funcionalidades de rede social, permitindo que cada artesão publique seus produtos e também compartilhe sua história pessoal. Com isso, os visitantes da plataforma não apenas descobrem itens únicos feitos à mão, mas também conhecem o contexto, a trajetória e as inspirações por trás de cada peça. A plataforma promove uma conexão entre o público e os artistas, incentivando o consumo consciente e o reconhecimento cultural.",
+        "role": "Desenvolvedor Front-end"
+      }
+    },
+    "projectButton": "Ver Projeto",
+    "githubButton": "Ver no GitHub"
+  },
+
+  "Contact": {
+    "title": "Fale Comigo",
+    "subtitle": "Preencha o formulário abaixo para entrar em contato.",
+    "name": "Nome",
+    "email": "E-mail",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "sendButton": {
+      "send": "Enviar",
+      "sending": "Enviando..."
+    },
+    "notification": "Mensagem enviada com sucesso!"
+  }
+}
