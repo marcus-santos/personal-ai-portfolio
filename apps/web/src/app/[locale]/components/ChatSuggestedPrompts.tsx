@@ -1,19 +1,28 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 
 function ChatSuggestedPrompts({
   onPromptClick,
 }: {
   onPromptClick: (prompt: string) => void;
 }) {
-  const suggestedPrompts = [
-    'What are your main skills as a fullstack developer?',
-    'Tell me about a project that you are really proud of',
-    'What companies or projects have you worked on?',
-  ];
+  const t = useTranslations('Chat');
+  const [suggestedPrompts, setSuggestedPrompts] = useState<string[]>([]);
+
+  useEffect(() => {
+    setSuggestedPrompts([
+      t('suggestedQuestions.first'),
+      t('suggestedQuestions.second'),
+      t('suggestedQuestions.third'),
+    ]);
+  }, [t]);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <h1 className="my-10 text-2xl font-semibold">Try these Prompts</h1>
+      <h1 className="my-10 text-2xl font-semibold">{t('title')}</h1>
       <div className="flex flex-col sm:flex-row items-center gap-4 justify-around w-full">
         {suggestedPrompts.map((prompt, idx) => (
           <Button

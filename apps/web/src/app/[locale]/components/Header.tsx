@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import ContactForm from './ContactForm';
+import { RiMenu2Fill } from 'react-icons/ri';
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   SheetTrigger,
   Sheet,
@@ -14,8 +17,6 @@ import {
   SheetDescription,
   SheetClose,
 } from '@/components/ui/sheet';
-import { RiMenu2Fill } from 'react-icons/ri';
-import { useState } from 'react';
 
 interface HeaderProps {
   title: string;
@@ -40,6 +41,7 @@ function Header({
 }: HeaderProps) {
   const pathName = usePathname();
   const [contactOpen, setContactOpen] = useState(false);
+  const t = useTranslations('Header');
 
   return (
     <header className="sticky top-0 z-50 w-full max-w-[1472px] h-14 px-8 flex m-auto bg-[#1e1e1e]">
@@ -63,14 +65,14 @@ function Header({
                   className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
                   href={portfolioRef}
                 >
-                  Portfolio
+                  {t('portfolio')}
                 </Link>
                 <a
                   className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
                   download
                   href={resumeRef}
                 >
-                  Resume
+                  {t('resume')}
                 </a>
                 <SheetClose asChild>
                   <button
@@ -78,7 +80,7 @@ function Header({
                     className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
                     onClick={() => setContactOpen(true)}
                   >
-                    Contact
+                    {t('contact')}
                   </button>
                 </SheetClose>
               </SheetDescription>
@@ -96,21 +98,21 @@ function Header({
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             href={portfolioRef}
           >
-            Portfolio
+            {t('portfolio')}
           </Link>
           <a
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
             download
             href={resumeRef}
           >
-            Resume
+            {t('resume')}
           </a>
           <Button
             onClick={() => setContactOpen(true)}
             variant={'link'}
             className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
           >
-            Contact
+            {t('contact')}
           </Button>
         </nav>
         <ContactForm

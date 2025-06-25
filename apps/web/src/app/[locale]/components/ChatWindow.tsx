@@ -7,6 +7,7 @@ import { useStoreMarcusChat, useStoreLukasChat } from '@/hooks/use-store-chat';
 import { Message } from '../types/chat-store';
 import ChatSuggestedPrompts from './ChatSuggestedPrompts';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface ChatWindowProps {
   api: string;
@@ -22,6 +23,8 @@ export function ChatWindow({ api }: ChatWindowProps) {
   const setThreadId = useStoreChat((state) => state.setThreadId);
   const threadId = useStoreChat((state) => state.threadId);
   const [isLoading, setIsLoading] = useState(false);
+
+  const t = useTranslations('Chat');
 
   const handleSendMessage = async (message: string) => {
     const userMessage: Message = {
@@ -53,10 +56,11 @@ export function ChatWindow({ api }: ChatWindowProps) {
       const userThreadId = data.threadId;
       setThreadId(userThreadId);
     } catch (err) {
+      const content = t('error');
       const userMessage: Message = {
         id: String(Date.now() + 2),
         role: 'assistant',
-        content: 'Erro ao buscar resposta.',
+        content: content,
       };
       addMessage(userMessage);
     } finally {

@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { DialogHeader } from '@/components/ui/dialog';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { FaRegCircleCheck } from 'react-icons/fa6';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -14,6 +14,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from '@radix-ui/react-dialog';
+import { useTranslations } from 'next-intl';
 
 function ContactForm({
   open,
@@ -71,6 +72,7 @@ function ContactForm({
   };
 
   const pathName = usePathname();
+  const t = useTranslations('Contact');
 
   return (
     <>
@@ -86,7 +88,7 @@ function ContactForm({
             <Alert className="w-fit h-fit bg-green-800 border-white/20">
               <AlertDescription className="text-white/80 font-semibold flex items-center gap-2">
                 <FaRegCircleCheck />
-                Message sent successfully!
+                {t('notification')}
               </AlertDescription>
             </Alert>
           </motion.div>
@@ -97,41 +99,41 @@ function ContactForm({
           <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
             <DialogHeader>
               <div className="flex justify-between">
-                <DialogTitle className="text-xl">Contact Me</DialogTitle>
+                <DialogTitle className="text-xl">{t('title')}</DialogTitle>
                 <DialogClose className="text-xl mr-3 text-white/50 font-normal hover:text-white cursor-pointer">
                   x
                 </DialogClose>
               </div>
               <DialogDescription className="my-3">
-                Fill out the form below to get in touch.
+                {t('subtitle')}
               </DialogDescription>
             </DialogHeader>
             <div className="flex flex-col gap-4">
               <form className="w-full m-1 flex flex-col space-y-5">
                 <input
                   className="w-full p-2 border border-neutral-400 rounded"
-                  placeholder="Name"
+                  placeholder={t('name')}
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <input
                   className="w-full p-2 border border-neutral-400 rounded"
-                  placeholder="Subject"
+                  placeholder={t('subject')}
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                 />
                 <input
                   className="w-full p-2 border border-neutral-400 rounded"
-                  placeholder="Email"
+                  placeholder={t('email')}
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <textarea
                   className="w-full size-40 resize-none p-2 border border-neutral-400 rounded"
-                  placeholder="Message"
+                  placeholder={t('message')}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
@@ -141,7 +143,9 @@ function ContactForm({
                   type="submit"
                   className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/70 hover:bg-[#22c55e]' : 'bg-violet-500/50 hover:bg-violet-500/80'} mt-4 cursor-pointer`}
                 >
-                  {loading ? 'Sending...' : 'Send'}
+                  {loading
+                    ? `${t('sendButton.sending')}`
+                    : `${t('sendButton.send')}`}
                 </Button>
               </form>
             </div>
