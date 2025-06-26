@@ -58,6 +58,7 @@ function ChatSuggestedPrompts({
             key={idx}
             onClick={() => onPromptClick(prompt)}
             className="w-full max-w-[210px] sm:max-w-[25%] p-5 h-fit break-words whitespace-pre-wrap bg-white/5 text-sm cursor-pointer"
+
           >
             <p>{prompt}</p>
           </Button>

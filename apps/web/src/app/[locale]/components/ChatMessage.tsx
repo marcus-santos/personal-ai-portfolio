@@ -20,7 +20,7 @@ export function ChatMessage({
 
   if (loading) {
     return (
-      <div className="flex justify-start items-center bg-[#121214] text-muted-foreground rounded-lg px-4 py-2 text-black w-fit h-8">
+      <div className="flex justify-start items-center bg-primary-foreground text-muted-foreground rounded-lg px-4 py-2 text-black w-fit h-8">
         <TypingIndicator />
       </div>
     );
@@ -40,8 +40,8 @@ export function ChatMessage({
           'max-w-[80%] rounded-lg px-4 py-2 text-sm',
           'break-words whitespace-pre-wrap',
           isUser
-            ? 'bg-white/5 text-primary-foreground'
-            : 'bg-[#121214] text-muted-foreground',
+            ? 'bg-primary text-primary-foreground'
+            : 'bg-muted text-muted-foreground',
         )}
       >
         {content}

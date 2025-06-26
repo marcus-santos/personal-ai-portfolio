@@ -36,5 +36,3 @@ const lukas: headerUser = {
 };
 
 export { marcus, lukas };
-
-// 'https://drive.google.com/file/d/1CzSV3Y3U8ArzGAYWWkQ7esQF7itGF5KZ/view?usp=drive_link'
