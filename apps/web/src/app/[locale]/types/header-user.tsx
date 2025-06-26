@@ -1,8 +1,9 @@
 interface headerUser {
   title: string;
   titleRef: string;
+  chatRef: string;
   portfolioRef: string;
-  resumeRef: string;
+  aboutRef: string;
   transfer: string;
   githubRef: string;
   linkedInRef: string;
@@ -12,9 +13,9 @@ interface headerUser {
 const marcus: headerUser = {
   title: 'marcus-santos',
   titleRef: '/marcus',
+  chatRef: '/marcus/chat',
   portfolioRef: '/marcus/portfolio',
-  resumeRef:
-    'https://drive.google.com/file/d/1CzSV3Y3U8ArzGAYWWkQ7esQF7itGF5KZ/view?usp=drive_link',
+  aboutRef: '/marcus/about',
   transfer: '/lukas',
   githubRef: 'https://www.github.com/marcus-santos',
   linkedInRef: 'https://www.linkedin.com/in/marcus-vinicius-csantos',
@@ -24,8 +25,9 @@ const marcus: headerUser = {
 const lukas: headerUser = {
   title: 'lukascampos',
   titleRef: '/lukas',
+  chatRef: '/lukas/chat',
   portfolioRef: '/lukas/portfolio',
-  resumeRef:
+  aboutRef:
     'https://drive.usercontent.google.com/download?id=1440eo0Mr_oz4KCzquBpwnyQHa7Cso2_V&export=download',
   transfer: '/marcus',
   githubRef: 'https://www.github.com/lukascampos',
