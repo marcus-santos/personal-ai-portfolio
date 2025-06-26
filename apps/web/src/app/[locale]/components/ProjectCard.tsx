@@ -6,6 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import { GoArrowUpRight } from 'react-icons/go';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface ProjectCardProps {
   tag: string;
@@ -31,6 +32,7 @@ function ProjectCard({
   githubButtonRef,
 }: ProjectCardProps) {
   const pathName = usePathname();
+  const t = useTranslations('Portfolio');
   return (
     <div className="w-80 mb-30 lg:mb-45 md:w-xl lg:w-5xl 2xl:w-6xl h-fit flex flex-col mx-auto justify-center gap-5 xl:flex-row lg:mx-0">
       <div className="w-full flex flex-col p-10 h-80 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px] bg-white/5 rounded-xl">
@@ -52,14 +54,14 @@ function ProjectCard({
           <p className="mt-5 text-white/80">{description}</p>
           <div>
             <p className="border-solid border-b-2 border-neutral-600 py-3">
-              PROJECT INFO
+              {t('cardInfo')}
             </p>
             <div className="flex justify-between border-solid border-b-2 border-neutral-600 py-3">
-              <p>Year</p>
+              <p>{t('yearPlaceholder')}</p>
               <p className="text-white/80">{year}</p>
             </div>
             <div className="flex justify-between border-solid border-b-2 border-neutral-600 py-3">
-              <p>Role</p>
+              <p>{t('rolePlaceholder')}</p>
               <p className="text-white/80">{role}</p>
             </div>
             <div className="flex gap-4 mt-10">
@@ -71,7 +73,7 @@ function ProjectCard({
                     href={viewButtonRef}
                     className="flex items-center gap-1.5"
                   >
-                    View Project
+                    {t('projectButton')}
                     <GoArrowUpRight size={20} />
                   </Link>
                 </Button>
@@ -84,7 +86,7 @@ function ProjectCard({
                   href={githubButtonRef}
                   className="flex items-center gap-1.5"
                 >
-                  See on Github
+                  {t('githubButton')}
                   <FaGithub />
                 </Link>
               </Button>

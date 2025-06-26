@@ -1,0 +1,112 @@
+{
+  "Header": {
+    "chat": "Chat",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+
+  "Footer": {
+    "copyright": "© 2025 Marcus Santos. All rights reserved.",
+    "builtWith": "Built with React, Next.js, Tailwind CSS and Fastify."
+  },
+
+  "Home": {
+    "title": "Hi, I'm Marcus",
+    "subtitle": "Full-stack developer focused on building scalable and accessible digital experiences.",
+    "description":"I'm passionate about what I do, and nothing beats solving a problem while sipping a great coffee. Feel free to explore my work or talk to my assistant if you want to know more about me.",
+    "botButton": "Ask MarcusBot",
+    "portfolioButton": "See my work"
+  },
+
+  "Chat": {
+    "title": "Hey, I’m MarcusBot!",
+    "subtitle": "I'm here to help you learn more about Marcus’s work, skills, and academic background.",
+    "suggestionText": "Not sure what to ask? Start here:",
+    "placeholder": "Type a message...",
+    "error": "Error looking for the answer.",
+    "suggestedQuestions": {
+      "first": "Tell me about a project that you are really proud of",
+      "second": "What are your main skills as a fullstack developer?",
+      "third": "What companies or projects have you worked on?"
+    }
+  },
+
+  "Portfolio": {
+    "title": "FEATURED PROJECTS",
+    "subtitle": "Here are some selected projects that reflect my passion for developing personalized solutions, both on the front end and back end.",
+    "cardInfo": "PROJECT INFO",
+    "yearPlaceholder": "Year",
+    "rolePlaceholder": "Role",
+    "card": {
+      "one": {
+        "tag": "Extension Project",
+        "title": "Criarte – Handcrafted Marketplace",
+        "description": "This project is an e-commerce platform aimed at artisans, with the goal of valuing handcrafted work and local culture. The concept goes beyond a traditional online store — the system integrates social networking features, allowing each artisan to publish their products and also share their personal story. Through this, visitors to the platform not only discover unique handmade items, but also learn about the context, journey, and inspirations behind each piece. The platform fosters a connection between the public and the artists, encouraging conscious consumption and cultural recognition.",
+        "role": "Front-end Developer"
+      }
+    },
+    "projectButton": "View Project",
+    "githubButton": "See on GitHub"
+  },
+
+  "About": {
+    "title": "ABOUT ME",
+    "subtitle": "I’m a front-end developer based in Brazil with an academic foundation in systems analysis and a strong focus on modern web technologies.",
+    "description": "As a student at IFSP, I have been working across the full stack using technologies like React, Next.js, Node.js, and Tailwind CSS, always aiming to build organized, accessible, and scalable digital experiences. I contribute to both front-end and back-end development.",
+    "resumeButton": "Download Resume",
+    "stackSection": {
+      "title": "MY TECH STACK",
+      "subtitle": "Technologies i've been working with recently"
+    },
+    "learningSection":{
+      "title":"LEARNING PATH",
+      "subtitle":"Courses and institutions that built my path in technology.",
+      "academicCard":{
+        "one":{
+          "title": "Technologist of Computer Science",
+          "institution": "Federal Institute of São Paulo",
+          "description": "Higher education in systems development, software architecture, and databases."
+        },
+        "two":{
+          "title": "Computer Technician",
+          "institution": "Tancredo de Almeida Neves State School",
+          "description": "Technical high school program focused on computer science fundamentals."
+        }
+      }
+    },
+    "experienceSection":{
+      "title": "MY EXPERIENCE",
+      "subtitle": "Take a look at my professional journey timeline.",
+      "jobs": {
+        "one": {
+          "title": "Front-end Developer",
+          "subtitle": "Criarte Project – from february 2025 to present",
+          "description": "Worked with React, Next.js, Tailwind, and Shadcn to develop and improve internal platform features."
+        },
+        "two":{
+          "title": "Technical Assistant",
+          "subtitle": "Local Business – 2023",
+          "description": "Provided tech support, assisted with system configurations, and helped maintain digital workflows."
+        }
+      },
+      "linkPresentation": "Want to see what i've built?",
+      "link": "Click here"
+    }
+
+  },
+
+  "Contact": {
+    "title": "Contact Me",
+    "subtitle": "Fill out the form below to get in touch.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendButton": {
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "notification": "Message sent successfully!"
+  }
+}

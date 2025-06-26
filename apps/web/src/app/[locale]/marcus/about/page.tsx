@@ -1,20 +1,22 @@
 'use client';
 
-import Header from '@/app/components/Header';
-import { marcus } from '@/app/types/header-user';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import { LiaDownloadSolid } from 'react-icons/lia';
-import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { BiLogoTypescript } from 'react-icons/bi';
-import { SiNestjs, SiExpress } from 'react-icons/si';
-import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
-import AboutCard from '@/app/components/AboutCard';
-import Link from 'next/link';
-import Footer from '@/app/components/Footer';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
+import { LiaDownloadSolid } from 'react-icons/lia';
+import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
+import { SiExpress, SiNestjs } from 'react-icons/si';
+import AboutCard from '../../components/AboutCard';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import { marcus } from '../../types/header-user';
 
-function page() {
+function Page() {
+  const t = useTranslations('About');
   return (
     <div className="flex flex-col">
       <Header {...marcus} />
@@ -34,21 +36,11 @@ function page() {
             />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-4">ABOUT ME</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('title')}</h2>
 
-            <p className="text-lg font-semibold mb-4">
-              I’m a front-end developer based in Brazil with an academic
-              foundation in systems analysis and a strong focus on modern web
-              technologies.
-            </p>
+            <p className="text-lg font-semibold mb-4">{t('subtitle')}</p>
 
-            <p className="mb-4 text-white/80">
-              As a student at IFSP, I have been working across the full stack
-              using technologies like React, Next.js, Node.js, and Tailwind CSS,
-              always aiming to build organized, accessible, and scalable digital
-              experiences. I contribute to both front-end and back-end
-              development.
-            </p>
+            <p className="mb-4 text-white/80">{t('description')}</p>
             <Button
               asChild
               className="bg-[#22c55e]/60 hover:bg-[#22c55e]/80 cursor-pointer"
@@ -59,7 +51,7 @@ function page() {
                 className="flex items-center gap-1.5"
                 rel="noreferrer"
               >
-                Download Resume
+                {t('resumeButton')}
                 <LiaDownloadSolid className="mt-0.5" />
               </a>
             </Button>
@@ -72,10 +64,10 @@ function page() {
           className="py-20 border-b-2 border-neutral-700"
         >
           <h2 className="text-2xl font-semibold mb-1 text-center">
-            MY TECH STACK
+            {t('stackSection.title')}
           </h2>
           <p className="text-white/80 text-center">
-            Technologies i&apos;ve been working with recently
+            {t('stackSection.subtitle')}
           </p>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-14 w-1/2 mx-auto my-22">
             <Image
@@ -129,29 +121,25 @@ function page() {
           className="py-20 border-b-2 border-neutral-700"
         >
           <h2 className="text-2xl font-semibold mb-1 text-center">
-            LEARNING PATH
+            {t('learningSection.title')}
           </h2>
           <p className="text-white/80 text-center">
-            Courses and institutions that built my path in technology.
+            {t('learningSection.subtitle')}
           </p>
           <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 py-20">
             <div className="flex flex-col mx-auto gap-5">
               <AboutCard
-                graduation={'Technologist of Computer Science'}
-                institution={'Federal Institute of São Paulo'}
-                description={
-                  'Higher education in systems development, software architecture, and databases.'
-                }
+                graduation={t('learningSection.academicCard.one.title')}
+                institution={t('learningSection.academicCard.one.institution')}
+                description={t('learningSection.academicCard.one.description')}
                 imageUrl={'/graduation.svg'}
                 beginningYear={'2023'}
                 endYear={'2025'}
               />
               <AboutCard
-                graduation={'Computer Technician'}
-                institution={'Tancredo de Almeida Neves State School'}
-                description={
-                  'Technical high school program focused on computer science fundamentals.'
-                }
+                graduation={t('learningSection.academicCard.two.title')}
+                institution={t('learningSection.academicCard.two.institution')}
+                description={t('learningSection.academicCard.two.description')}
                 imageUrl={'/graduation.svg'}
                 beginningYear={'2018'}
                 endYear={'2020'}
@@ -166,37 +154,43 @@ function page() {
           transition={{ duration: 0.5, delay: 1.2 }}
           className="py-20"
         >
-          <h2 className="text-2xl font-semibold mb-1">MY EXPERIENCE</h2>
-          <p className="text-white/80">
-            Take a look at my professional journey timeline.
-          </p>
+          <h2 className="text-2xl font-semibold mb-1">
+            {t('experienceSection.title')}
+          </h2>
+          <p className="text-white/80">{t('experienceSection.subtitle')} </p>
           <div className="flex justify-between py-10">
             <div className="mt-8 border-l-2 border-[#44883e] pl-6 space-y-6">
               <div>
-                <h3 className="text-xl font-semibold">Front-end Developer</h3>
-                <p className="text-white/80">Criarte Project – 2025</p>
+                <h3 className="text-xl font-semibold">
+                  {t('experienceSection.jobs.one.title')}
+                </h3>
+                <p className="text-white/80">
+                  {t('experienceSection.jobs.one.subtitle')}
+                </p>
                 <p className="text-white/60 text-sm">
-                  Worked with React, Tailwind, and Shadcn to develop and improve
-                  internal platform features.
+                  {t('experienceSection.jobs.one.description')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold">Technical Assistant</h3>
-                <p className="text-white/80">Local Business – 2023</p>
+                <h3 className="text-xl font-semibold">
+                  {t('experienceSection.jobs.two.title')}
+                </h3>
+                <p className="text-white/80">
+                  {t('experienceSection.jobs.two.subtitle')}
+                </p>
                 <p className="text-white/60 text-sm">
-                  Provided tech support, assisted with system configurations,
-                  and helped maintain digital workflows.
+                  {t('experienceSection.jobs.two.description')}{' '}
                 </p>
               </div>
               <div>
                 <p className="text-white/80">
-                  Want to see what I&apos;ve built?{' '}
+                  {t('experienceSection.linkPresentation')}{' '}
                   <Link
                     href={'/marcus/portfolio'}
                     className="text-green-600 hover:text-green-500 transition underline underline-offset-2"
                   >
-                    Click here.
+                    {t('experienceSection.link')}
                   </Link>
                 </p>
               </div>
@@ -217,4 +211,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

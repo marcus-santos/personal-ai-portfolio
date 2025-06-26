@@ -1,20 +1,21 @@
+'use client';
+
 import React, { useState, useRef } from 'react';
 import { SendIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useAutosizeTextArea } from '@/hooks/use-autosize-textarea';
+import { useTranslations } from 'next-intl';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
-  placeholder?: string;
   className?: string;
   disabled?: boolean;
 }
 
 export function MessageInput({
   onSendMessage,
-  placeholder = 'Type a message...',
   disabled = false,
 }: ChatInputProps) {
   const [message, setMessage] = useState('');
@@ -26,6 +27,7 @@ export function MessageInput({
     dependencies: [message],
   });
 
+  const t = useTranslations('Chat');
   const handleSendMessage = () => {
     if (message.trim() && !disabled) {
       onSendMessage(message.trim());
@@ -54,7 +56,7 @@ export function MessageInput({
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={placeholder}
+              placeholder={t('placeholder')}
               disabled={disabled}
               aria-label="Write your message"
               maxLength={160}

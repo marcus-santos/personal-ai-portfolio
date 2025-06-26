@@ -7,8 +7,10 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
-function page() {
+function Page() {
+  const t = useTranslations('Home');
   const container = {
     hidden: {},
     show: {
@@ -37,7 +39,7 @@ function page() {
             variants={item}
             className="text-4xl font-bold flex items-center gap-2"
           >
-            Hi, I&apos;m Marcus{' '}
+            {t('title')}{' '}
             <motion.span
               className="inline origin-[70%_70%] mr-15 lg:mr-0"
               animate={{ rotate: [0, 20, -10, 20, 0] }}
@@ -53,22 +55,22 @@ function page() {
           </motion.h1>
 
           <motion.p variants={item} className="text-white/70">
-            Full-stack developer focused on building scalable and accessible
-            digital experiences.
-            <br /> I&apos;m passionate about what I do, and nothing beats
-            solving a problem while sipping a great coffee. Feel free to explore
-            my work or talk to my assistant if you want to know more about me.
+            {t('subtitle')}
+            <br /> {t('description')}
           </motion.p>
 
-          <motion.div variants={item} className="flex gap-4 mt-6 items-center">
+          <motion.div
+            variants={item}
+            className="flex flex-col md:flex-row gap-4 mt-6 items-center"
+          >
             <Button asChild className="bg-[#22c55e]/60 hover:bg-[#22c55e]/80">
-              <Link href={marcus.chatRef}>Ask MarcusBot</Link>
+              <Link href={marcus.chatRef}>{t('botButton')}</Link>
             </Button>
             <Link
               href={marcus.portfolioRef}
               className="hover:text-[#22c55e] transition"
             >
-              See my work
+              {t('portfolioButton')}
             </Link>
           </motion.div>
         </motion.div>
@@ -91,4 +93,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

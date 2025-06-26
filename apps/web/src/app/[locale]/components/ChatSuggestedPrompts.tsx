@@ -1,16 +1,25 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 function ChatSuggestedPrompts({
   onPromptClick,
 }: {
   onPromptClick: (prompt: string) => void;
 }) {
-  const suggestedPrompts = [
-    'What are your main skills as a fullstack developer?',
-    'Tell me about a project that you are really proud of',
-    'What companies or projects have you worked on?',
-  ];
+  const t = useTranslations('Chat');
+  const [suggestedPrompts, setSuggestedPrompts] = useState<string[]>([]);
+
+  useEffect(() => {
+    setSuggestedPrompts([
+      t('suggestedQuestions.first'),
+      t('suggestedQuestions.second'),
+      t('suggestedQuestions.third'),
+    ]);
+  }, [t]);
 
   const container = {
     hidden: {},
@@ -34,12 +43,9 @@ function ChatSuggestedPrompts({
         animate="show"
         className="flex flex-col gap-2 mt-20 mb-10 text-lg text-center font-semibold"
       >
-        <motion.h1 variants={item}>Hey, I’m MarcusBot!</motion.h1>
-        <motion.p variants={item}>
-          I&apos;m here to help you learn more about Marcus’s work, skills, and
-          academic background.
-        </motion.p>
-        <motion.p variants={item}>Not sure what to ask? Start here:</motion.p>
+        <motion.h1 variants={item}>{t('title')}</motion.h1>
+        <motion.p variants={item}>{t('subtitle')}</motion.p>
+        <motion.p variants={item}>{t('suggestionText')}</motion.p>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}

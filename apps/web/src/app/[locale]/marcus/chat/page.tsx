@@ -1,6 +1,6 @@
-import Header from '@/app/components/Header';
-import { marcus } from '@/app/types/header-user';
-import { ChatWindow } from '@/app/components/ChatWindow';
+import { ChatWindow } from '../../components/ChatWindow';
+import Header from '../../components/Header';
+import { marcus } from '../../types/header-user';
 
 function page() {
   return (
