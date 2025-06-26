@@ -1,12 +1,28 @@
 {
   "Header": {
+    "chat": "Chat",
     "portfolio": "Portfolio",
-    "resume": "Resume",
+    "about": "About",
     "contact": "Contact"
   },
 
+  "Footer": {
+    "copyright": "© 2025 Marcus Santos. All rights reserved.",
+    "builtWith": "Built with React, Next.js, Tailwind CSS and Fastify."
+  },
+
+  "Home": {
+    "title": "Hi, I'm Marcus",
+    "subtitle": "Full-stack developer focused on building scalable and accessible digital experiences.",
+    "description":"I'm passionate about what I do, and nothing beats solving a problem while sipping a great coffee. Feel free to explore my work or talk to my assistant if you want to know more about me.",
+    "botButton": "Ask MarcusBot",
+    "portfolioButton": "See my work"
+  },
+
   "Chat": {
-    "title": "Try these Prompts",
+    "title": "Hey, I’m MarcusBot!",
+    "subtitle": "I'm here to help you learn more about Marcus’s work, skills, and academic background.",
+    "suggestionText": "Not sure what to ask? Start here:",
     "placeholder": "Type a message...",
     "error": "Error looking for the answer.",
     "suggestedQuestions": {
@@ -32,6 +48,52 @@
     },
     "projectButton": "View Project",
     "githubButton": "See on GitHub"
+  },
+
+  "About": {
+    "title": "ABOUT ME",
+    "subtitle": "I’m a front-end developer based in Brazil with an academic foundation in systems analysis and a strong focus on modern web technologies.",
+    "description": "As a student at IFSP, I have been working across the full stack using technologies like React, Next.js, Node.js, and Tailwind CSS, always aiming to build organized, accessible, and scalable digital experiences. I contribute to both front-end and back-end development.",
+    "resumeButton": "Download Resume",
+    "stackSection": {
+      "title": "MY TECH STACK",
+      "subtitle": "Technologies i've been working with recently"
+    },
+    "learningSection":{
+      "title":"LEARNING PATH",
+      "subtitle":"Courses and institutions that built my path in technology.",
+      "academicCard":{
+        "one":{
+          "title": "Technologist of Computer Science",
+          "institution": "Federal Institute of São Paulo",
+          "description": "Higher education in systems development, software architecture, and databases."
+        },
+        "two":{
+          "title": "Computer Technician",
+          "institution": "Tancredo de Almeida Neves State School",
+          "description": "Technical high school program focused on computer science fundamentals."
+        }
+      }
+    },
+    "experienceSection":{
+      "title": "MY EXPERIENCE",
+      "subtitle": "Take a look at my professional journey timeline.",
+      "jobs": {
+        "one": {
+          "title": "Front-end Developer",
+          "subtitle": "Criarte Project – from february 2025 to present",
+          "description": "Worked with React, Next.js, Tailwind, and Shadcn to develop and improve internal platform features."
+        },
+        "two":{
+          "title": "Technical Assistant",
+          "subtitle": "Local Business – 2023",
+          "description": "Provided tech support, assisted with system configurations, and helped maintain digital workflows."
+        }
+      },
+      "linkPresentation": "Want to see what i've built?",
+      "link": "Click here"
+    }
+
   },
 
   "Contact": {

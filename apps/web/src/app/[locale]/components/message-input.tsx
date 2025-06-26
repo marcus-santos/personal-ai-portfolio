@@ -85,8 +85,8 @@ export function MessageInput({
             disabled={!message.trim() || disabled}
             aria-label="Send message"
             className={cn(
-              'rounded-md bg-white text-[#1e1e1e] cursor-pointer',
-              'hover:bg-white/90 transition-opacity',
+              'rounded-md bg-[#22c55e]/90 text-[#1e1e1e] cursor-pointer',
+              'hover:bg-[#22c55e]/70 transition-opacity',
               'disabled:pointer-events-none disabled:opacity-50',
               'flex items-center justify-center',
             )}

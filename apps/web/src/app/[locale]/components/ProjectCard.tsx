@@ -35,7 +35,7 @@ function ProjectCard({
   const t = useTranslations('Portfolio');
   return (
     <div className="w-80 mb-30 lg:mb-45 md:w-xl lg:w-5xl 2xl:w-6xl h-fit flex flex-col mx-auto justify-center gap-5 xl:flex-row lg:mx-0">
-      <div className="w-full flex flex-col p-10 h-80 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px] bg-neutral-700 rounded-xl">
+      <div className="w-full flex flex-col p-10 h-80 md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px] bg-white/5 rounded-xl">
         <p className="mb-5 text-sm px-3 py-1 font-semibold w-fit rounded-xl bg-black/85">
           {tag}
         </p>

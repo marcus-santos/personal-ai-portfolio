@@ -111,28 +111,28 @@ function ContactForm({
             <div className="flex flex-col gap-4">
               <form className="w-full m-1 flex flex-col space-y-5">
                 <input
-                  className="w-full p-2 border border-neutral-400 rounded"
+                  className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
                   placeholder={t('name')}
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <input
-                  className="w-full p-2 border border-neutral-400 rounded"
+                  className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
                   placeholder={t('subject')}
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                 />
                 <input
-                  className="w-full p-2 border border-neutral-400 rounded"
+                  className="w-full p-2 border border-neutral-400 rounded placeholder:text-sm"
                   placeholder={t('email')}
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <textarea
-                  className="w-full size-40 resize-none p-2 border border-neutral-400 rounded"
+                  className="w-full size-40 resize-none p-2 border border-neutral-400 rounded placeholder:text-sm"
                   placeholder={t('message')}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}

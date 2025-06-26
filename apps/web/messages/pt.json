@@ -1,12 +1,28 @@
 {
   "Header": {
+    "chat": "Chat",
     "portfolio": "Portfólio",
-    "resume": "Currículo",
+    "about": "Sobre",
     "contact": "Contato"
   },
 
+  "Footer": {
+    "copyright": "© 2025 Marcus Santos. Todos os direitos reservados.",
+    "builtWith": "Desenvolvido com React, Next.js, Tailwind CSS e Fastify."
+  },
+
+  "Home": {
+    "title": "Olá, eu sou o Marcus",
+    "subtitle": "Desenvolvedor full-stack focado em criar experiências digitais escaláveis e acessíveis.",
+    "description": "Sou apaixonado pelo que faço, e nada melhor do que resolver um problema tomando um bom café. Fique à vontade para explorar meu trabalho ou conversar com meu assistente se quiser saber mais sobre mim.",
+    "botButton": "Pergunte ao MarcusBot",
+    "portfolioButton": "Veja meu trabalho"
+  },
+
   "Chat": {
-    "title": "Experimente estes prompts",
+    "title": "Ei, eu sou o MarcusBot!",
+    "subtitle": "Estou aqui para te ajudar a conhecer mais sobre o trabalho, habilidades e formação acadêmica do Marcus.",
+    "suggestionText": "Não sabe por onde começar? Experimente:",
     "placeholder": "Digite uma mensagem...",
     "error": "Erro ao buscar a resposta.",
     "suggestedQuestions": {
@@ -23,7 +39,7 @@
     "yearPlaceholder": "Ano",
     "rolePlaceholder": "Função",
     "card": {
-      "one": { 
+      "one": {
         "tag": "Projeto de Extensão",
         "title": "Criarte – Marketplace Artesanal",
         "description": "Este projeto é uma plataforma de e-commerce voltada para artesãos, com o objetivo de valorizar o trabalho artesanal e a cultura local. O conceito vai além de uma loja virtual tradicional — o sistema integra funcionalidades de rede social, permitindo que cada artesão publique seus produtos e também compartilhe sua história pessoal. Com isso, os visitantes da plataforma não apenas descobrem itens únicos feitos à mão, mas também conhecem o contexto, a trajetória e as inspirações por trás de cada peça. A plataforma promove uma conexão entre o público e os artistas, incentivando o consumo consciente e o reconhecimento cultural.",
@@ -32,6 +48,51 @@
     },
     "projectButton": "Ver Projeto",
     "githubButton": "Ver no GitHub"
+  },
+
+  "About": {
+    "title": "SOBRE MIM",
+    "subtitle": "Sou um desenvolvedor front-end residente no Brasil com formação acadêmica em análise de sistemas e foco em tecnologias web modernas.",
+    "description": "Como estudante do IFSP, venho atuando como Full Stack com tecnologias como React, Next.js, Node.js e Tailwind CSS, sempre buscando criar experiências digitais organizadas, acessíveis e escaláveis. Contribuo tanto no desenvolvimento front-end quanto no back-end.",
+    "resumeButton": "Baixar Currículo",
+    "stackSection": {
+      "title": "MINHA STACK",
+      "subtitle": "Tecnologias com as quais venho trabalhando recentemente"
+    },
+    "learningSection": {
+      "title": "CAMINHO DE APRENDIZADO",
+      "subtitle": "Cursos e instituições que construíram minha trajetória na tecnologia.",
+      "academicCard": {
+        "one": {
+          "title": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+          "institution": "Instituto Federal de São Paulo",
+          "description": "Ensino superior em desenvolvimento de sistemas, arquitetura de software e bancos de dados."
+        },
+        "two": {
+          "title": "Técnico em Informática",
+          "institution": "Escola Estadual Tancredo de Almeida Neves",
+          "description": "Curso técnico integrado ao ensino médio com foco em fundamentos da ciência da computação."
+        }
+      }
+    },
+    "experienceSection": {
+      "title": "MINHA EXPERIÊNCIA",
+      "subtitle": "Dê uma olhada na linha do tempo da minha trajetória profissional.",
+      "jobs": {
+        "one": {
+          "title": "Desenvolvedor Front-end",
+          "subtitle": "Projeto Criarte – de fevereiro de 2025 até o presente",
+          "description": "Atuei com React, Next.js, Tailwind e Shadcn no desenvolvimento e melhoria de funcionalidades da plataforma interna."
+        },
+        "two": {
+          "title": "Assistente Técnico",
+          "subtitle": "Comércio local – 2023",
+          "description": "Prestei suporte técnico, auxiliei em configurações de sistemas e na manutenção de fluxos digitais."
+        }
+      },
+      "linkPresentation": "Quer ver o que eu construí?",
+      "link": "Clique aqui"
+    }
   },
 
   "Contact": {
