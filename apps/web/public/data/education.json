@@ -1,0 +1,46 @@
+{
+  "en": [
+    {
+      "id": "technologist-computer-science",
+      "institution": "Federal Institute of São Paulo",
+      "degree": "Technologist of Computer Science",
+      "startDate": "2023-01",
+      "endDate": "2025-12",
+      "description": "Higher education in systems development, software architecture, and databases.",
+      "image": "/graduation.svg",
+      "type": "degree"
+    },
+    {
+      "id": "computer-technician",
+      "institution": "Tancredo de Almeida Neves State School",
+      "degree": "Computer Technician",
+      "startDate": "2018-01",
+      "endDate": "2020-12",
+      "description": "Technical high school program focused on computer science fundamentals.",
+      "image": "/graduation.svg",
+      "type": "degree"
+    }
+  ],
+  "pt": [
+    {
+      "id": "technologist-computer-science",
+      "institution": "Instituto Federal de São Paulo",
+      "degree": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "startDate": "2023-01",
+      "endDate": "2025-12",
+      "description": "Ensino superior em desenvolvimento de sistemas, arquitetura de software e bancos de dados.",
+      "image": "/graduation.svg",
+      "type": "degree"
+    },
+    {
+      "id": "computer-technician",
+      "institution": "Escola Estadual Tancredo de Almeida Neves",
+      "degree": "Técnico em Informática",
+      "startDate": "2018-01",
+      "endDate": "2020-12",
+      "description": "Curso técnico integrado ao ensino médio com foco em fundamentos da ciência da computação.",
+      "image": "/graduation.svg",
+      "type": "degree"
+    }
+  ]
+}

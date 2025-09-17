@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import TypingIndicator from './TypingIndicator';
+import TypingIndicator from './typing-indicator';
 
 interface ChatMessageProps {
   role: 'user' | 'assistant';

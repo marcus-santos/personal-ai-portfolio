@@ -1,0 +1,50 @@
+{
+  "en": [
+    {
+      "id": "frontend-developer-criarte",
+      "company": "Criarte Project",
+      "position": "Front-end Developer",
+      "startDate": "2025-02",
+      "endDate": null,
+      "current": true,
+      "description": "Worked with React, Next.js, Tailwind, and Shadcn to develop and improve internal platform features.",
+      "technologies": ["React", "Next.js", "Tailwind CSS", "Shadcn/ui"],
+      "location": "Remote"
+    },
+    {
+      "id": "technical-assistant-local",
+      "company": "Local Business",
+      "position": "Technical Assistant",
+      "startDate": "2023-01",
+      "endDate": "2023-12",
+      "current": false,
+      "description": "Provided tech support, assisted with system configurations, and helped maintain digital workflows.",
+      "technologies": ["System Administration", "Technical Support"],
+      "location": "Brazil"
+    }
+  ],
+  "pt": [
+    {
+      "id": "frontend-developer-criarte",
+      "company": "Projeto Criarte",
+      "position": "Desenvolvedor Front-end",
+      "startDate": "2025-02",
+      "endDate": null,
+      "current": true,
+      "description": "Atuei com React, Next.js, Tailwind e Shadcn no desenvolvimento e melhoria de funcionalidades da plataforma interna.",
+      "technologies": ["React", "Next.js", "Tailwind CSS", "Shadcn/ui"],
+      "location": "Remoto"
+    },
+    {
+      "id": "technical-assistant-local",
+      "company": "Comércio local",
+      "position": "Assistente Técnico",
+      "startDate": "2023-01",
+      "endDate": "2023-12",
+      "current": false,
+      "description": "Prestei suporte técnico, auxiliei em configurações de sistemas e na manutenção de fluxos digitais.",
+      "technologies": ["Administração de Sistemas", "Suporte Técnico"],
+      "location": "Brasil"
+    }
+  ]
+}

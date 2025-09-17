@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ChatMessage } from './ChatMessage';
+import { ChatMessage } from './chat-message';
 import { MessageInput } from './message-input';
 import { useStoreMarcusChat, useStoreLukasChat } from '@/hooks/use-store-chat';
 import { Message } from '../types/chat-store';
-import ChatSuggestedPrompts from './ChatSuggestedPrompts';
+import ChatSuggestedPrompts from './chat-suggested-prompts';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 

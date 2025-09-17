@@ -1,22 +1,62 @@
 'use client';
 
+import Footer from '@/components/common/footer';
+import Header from '@/components/common/header';
+import EducationCard from '@/components/education-card';
+import ExperienceCard from '@/components/experience-card';
+import StackSection from '@/components/stack-section';
 import { Button } from '@/components/ui/button';
+import { useEducationData } from '@/hooks/use-education-data';
+import { useExperiencesData } from '@/hooks/use-experiences-data';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BiLogoTypescript } from 'react-icons/bi';
-import { FaNodeJs, FaReact } from 'react-icons/fa';
 import { LiaDownloadSolid } from 'react-icons/lia';
-import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
-import { SiExpress, SiNestjs } from 'react-icons/si';
-import AboutCard from '../../components/AboutCard';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import { marcus } from '../../types/header-user';
+import { marcus } from '../../../../types/header-user';
 
 function Page() {
   const t = useTranslations('About');
+  const {
+    experiences,
+    loading: experiencesLoading,
+    error: experiencesError,
+  } = useExperiencesData();
+  const {
+    education,
+    loading: educationLoading,
+    error: educationError,
+  } = useEducationData();
+
+  const loading = experiencesLoading || educationLoading;
+  const error = experiencesError || educationError;
+
+  if (loading) {
+    return (
+      <div className="flex flex-col h-screen">
+        <Header {...marcus} />
+        <main className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4" />
+            <p>Loading...</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col h-screen">
+        <Header {...marcus} />
+        <main className="flex-1 flex items-center justify-center">
+          <p className="text-red-400">Error: {error}</p>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col">
       <Header {...marcus} />
@@ -69,50 +109,7 @@ function Page() {
           <p className="text-white/80 text-center">
             {t('stackSection.subtitle')}
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-14 w-1/2 mx-auto my-22">
-            <Image
-              src={'/html-5-svgrepo-com.svg'}
-              alt={'html-icon'}
-              width={50}
-              height={50}
-              className="min-w-[50px] min-h-[50px]"
-            />
-            <Image
-              src={'/css-3-svgrepo-com.svg'}
-              alt={'html-icon'}
-              width={50}
-              height={50}
-              className="min-w-[50px] min-h-[50px]"
-            />
-            <FaReact size={50} className="text-[#58C4DC]" />
-            <Image
-              src={'/nextjs-svgrepo-com.svg'}
-              alt={'nextjs-icon'}
-              width={50}
-              height={50}
-              className="min-w-[50px] min-h-[50px]"
-            />
-            <RiTailwindCssFill size={50} className="text-[#F50057]" />
-            <BiLogoTypescript size={50} className="text-[#3178c6]" />
-            <RiJavascriptFill size={50} className="text-[#F7DF1E]" />
-            <FaNodeJs size={50} className="text-[#44883e]" />
-            <SiExpress size={50} />
-            <SiNestjs size={50} className="text-[#F50057]" />
-            <Image
-              src={'/java-svgrepo-com.svg'}
-              alt={'java-icon'}
-              width={50}
-              height={50}
-              className="min-w-[50px] min-h-[50px]"
-            />
-            <Image
-              src={'/python-svgrepo-com.svg'}
-              alt={'python-icon'}
-              width={50}
-              height={50}
-              className="min-w-[50px] min-h-[50px]"
-            />
-          </div>
+          <StackSection />
         </motion.section>
         <motion.section
           initial={{ opacity: 0, y: -10 }}
@@ -128,24 +125,25 @@ function Page() {
           </p>
           <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 py-20">
             <div className="flex flex-col mx-auto gap-5">
-              <AboutCard
-                graduation={t('learningSection.academicCard.one.title')}
-                institution={t('learningSection.academicCard.one.institution')}
-                description={t('learningSection.academicCard.one.description')}
-                imageUrl={'/graduation.svg'}
-                beginningYear={'2023'}
-                endYear={'2025'}
-              />
-              <AboutCard
-                graduation={t('learningSection.academicCard.two.title')}
-                institution={t('learningSection.academicCard.two.institution')}
-                description={t('learningSection.academicCard.two.description')}
-                imageUrl={'/graduation.svg'}
-                beginningYear={'2018'}
-                endYear={'2020'}
-              />
+              {education
+                .filter((educationItem) => educationItem.type === 'degree')
+                .map((educationItem) => (
+                  <EducationCard
+                    key={educationItem.id}
+                    education={educationItem}
+                  />
+                ))}
             </div>
-            <div className="flex flex-col mx-auto gap-5" />
+            <div className="flex flex-col mx-auto gap-5">
+              {education
+                .filter((educationItem) => educationItem.type === 'certificate')
+                .map((educationItem) => (
+                  <EducationCard
+                    key={educationItem.id}
+                    education={educationItem}
+                  />
+                ))}
+            </div>
           </div>
         </motion.section>
         <motion.section
@@ -160,29 +158,9 @@ function Page() {
           <p className="text-white/80">{t('experienceSection.subtitle')} </p>
           <div className="flex justify-between py-10">
             <div className="mt-8 border-l-2 border-[#44883e] pl-6 space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold">
-                  {t('experienceSection.jobs.one.title')}
-                </h3>
-                <p className="text-white/80">
-                  {t('experienceSection.jobs.one.subtitle')}
-                </p>
-                <p className="text-white/60 text-sm">
-                  {t('experienceSection.jobs.one.description')}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">
-                  {t('experienceSection.jobs.two.title')}
-                </h3>
-                <p className="text-white/80">
-                  {t('experienceSection.jobs.two.subtitle')}
-                </p>
-                <p className="text-white/60 text-sm">
-                  {t('experienceSection.jobs.two.description')}{' '}
-                </p>
-              </div>
+              {experiences.map((experience) => (
+                <ExperienceCard key={experience.id} experience={experience} />
+              ))}
               <div>
                 <p className="text-white/80">
                   {t('experienceSection.linkPresentation')}{' '}

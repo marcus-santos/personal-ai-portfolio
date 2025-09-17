@@ -1,0 +1,62 @@
+{
+  "en": [
+    {
+      "id": "criarte-marketplace",
+      "title": "Criarte – Handcrafted Marketplace",
+      "description": "This project is an e-commerce platform aimed at artisans, with the goal of valuing handcrafted work and local culture. The concept goes beyond a traditional online store — the system integrates social networking features, allowing each artisan to publish their products and also share their personal story. Through this, visitors to the platform not only discover unique handmade items, but also learn about the context, journey, and inspirations behind each piece. The platform fosters a connection between the public and the artists, encouraging conscious consumption and cultural recognition.",
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      "image": "/artesaos-project.svg",
+      "role": "Frontend Developer",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/marcus-santos/artesaos-project-web",
+      "featured": true,
+      "category": "Web",
+      "startDate": "2025-02",
+      "endDate": null
+    },
+    {
+      "id": "let-me-ask",
+      "title": "Let Me Ask",
+      "description": "This project is a question-and-answer platform where users can ask questions and get answers from experts in various fields. The goal is to create a collaborative learning space where knowledge is shared and accessible to all.",
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      "image": "/artesaos-project.svg",
+      "role": "Fullstack Developer",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/marcus-santos/let-me-ask-web",
+      "featured": true,
+      "category": "Web",
+      "startDate": "2025-06",
+      "endDate": "2025-07"
+    }
+  ],
+  "pt": [
+    {
+      "id": "criarte-marketplace",
+      "title": "Criarte – Marketplace Artesanal",
+      "description": "Este projeto é uma plataforma de e-commerce voltada para artesãos, com o objetivo de valorizar o trabalho artesanal e a cultura local. O conceito vai além de uma loja virtual tradicional — o sistema integra funcionalidades de rede social, permitindo que cada artesão publique seus produtos e também compartilhe sua história pessoal. Com isso, os visitantes da plataforma não apenas descobrem itens únicos feitos à mão, mas também conhecem o contexto, a trajetória e as inspirações por trás de cada peça. A plataforma promove uma conexão entre o público e os artistas, incentivando o consumo consciente e o reconhecimento cultural.",
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      "image": "/artesaos-project.svg",
+      "role": "Frontend Developer",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/marcus-santos/artesaos-project-web",
+      "featured": true,
+      "category": "Web",
+      "startDate": "2025-02",
+      "endDate": null
+    },
+    {
+      "id": "let-me-ask",
+      "title": "Let Me Ask",
+      "description": "Este projeto é uma plataforma de perguntas e respostas, onde os usuários podem fazer perguntas e obter respostas de especialistas em diversas áreas. O objetivo é criar um espaço de aprendizado colaborativo, onde o conhecimento é compartilhado e acessível a todos.",
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      "image": "/artesaos-project.svg",
+      "role": "Fullstack Developer",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/marcus-santos/let-me-ask-web",
+      "featured": true,
+      "category": "Web",
+      "startDate": "2025-02",
+      "endDate": "2025-07"
+    }
+  ]
+}

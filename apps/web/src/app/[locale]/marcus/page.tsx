@@ -1,13 +1,13 @@
 'use client';
 
-import Header from '../components/Header';
-import { marcus } from '../types/header-user';
-import Footer from '../components/Footer';
-import Link from 'next/link';
+import Footer from '@/components/common/footer';
+import Header from '@/components/common/header';
 import { Button } from '@/components/ui/button';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { marcus } from '../../../types/header-user';
 
 function Page() {
   const t = useTranslations('Home');

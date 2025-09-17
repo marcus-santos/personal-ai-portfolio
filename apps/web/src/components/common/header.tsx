@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
-import ContactForm from './ContactForm';
+import ContactForm from './contact-form';
 import { RiMenu2Fill } from 'react-icons/ri';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -46,8 +46,8 @@ function Header({
   const t = useTranslations('Header');
 
   return (
-    <div className="bg-[#121214]/90 sticky top-0 z-50">
-      <header className=" w-full max-w-[1472px] h-14 px-8 flex mx-auto ">
+    <div className="bg-[#121214]/85 backdrop-blur-md sticky top-0 z-50">
+      <header className="w-full max-w-[1472px] h-14 px-8 flex mx-auto ">
         <div className="flex h-full">
           <Sheet>
             <SheetTrigger className="sm:hidden">

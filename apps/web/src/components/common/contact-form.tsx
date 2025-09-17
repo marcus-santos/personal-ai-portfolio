@@ -95,8 +95,8 @@ function ContactForm({
         )}
       </AnimatePresence>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="fixed inset-0 flex items-center justify-center bg-black/50">
-          <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-sm text-white/80">
+        <DialogContent className="absolute top-50 md:top-30 m-auto inset-0 w-xs h-84 sm:h-full sm:w-sm text-white/80">
+          <div className=" bg-[#1e1e1e] p-6 rounded-lg shadow-lg ">
             <DialogHeader>
               <div className="flex justify-between">
                 <DialogTitle className="text-xl">{t('title')}</DialogTitle>

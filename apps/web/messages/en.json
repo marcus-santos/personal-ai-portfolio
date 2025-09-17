@@ -61,35 +61,11 @@
     },
     "learningSection":{
       "title":"LEARNING PATH",
-      "subtitle":"Courses and institutions that built my path in technology.",
-      "academicCard":{
-        "one":{
-          "title": "Technologist of Computer Science",
-          "institution": "Federal Institute of São Paulo",
-          "description": "Higher education in systems development, software architecture, and databases."
-        },
-        "two":{
-          "title": "Computer Technician",
-          "institution": "Tancredo de Almeida Neves State School",
-          "description": "Technical high school program focused on computer science fundamentals."
-        }
-      }
+      "subtitle":"Courses and institutions that built my path in technology."
     },
     "experienceSection":{
       "title": "MY EXPERIENCE",
       "subtitle": "Take a look at my professional journey timeline.",
-      "jobs": {
-        "one": {
-          "title": "Front-end Developer",
-          "subtitle": "Criarte Project – from february 2025 to present",
-          "description": "Worked with React, Next.js, Tailwind, and Shadcn to develop and improve internal platform features."
-        },
-        "two":{
-          "title": "Technical Assistant",
-          "subtitle": "Local Business – 2023",
-          "description": "Provided tech support, assisted with system configurations, and helped maintain digital workflows."
-        }
-      },
       "linkPresentation": "Want to see what i've built?",
       "link": "Click here"
     }
