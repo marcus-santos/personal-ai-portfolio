@@ -3,6 +3,7 @@ import cors from '@fastify/cors';
 import { env } from './env';
 import { lukas, marcus } from './openai';
 import { sendEmail } from './resend';
+import { keepServerAlive } from './cron-job';
 
 const fastify = Fastify();
 
@@ -10,6 +11,8 @@ fastify.register(cors, {
   origin: env.CORS_URL,
   strictPreflight: false,
 });
+
+keepServerAlive();
 
 fastify.get('/', async (request, reply) => reply.send({
   message: 'Hello from the API!',
