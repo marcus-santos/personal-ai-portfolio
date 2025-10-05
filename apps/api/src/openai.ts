@@ -8,6 +8,7 @@ const openaiMarcus = new OpenAI({
 
 export async function marcus(question: string, threadId?: string) {
   let thread;
+  let currentThreadId: string;
 
   if (!threadId) {
     thread = await openaiMarcus.beta.threads.create({
@@ -18,10 +19,13 @@ export async function marcus(question: string, threadId?: string) {
         },
       ],
     });
+    currentThreadId = thread.id;
+  } else {
+    currentThreadId = threadId;
   }
 
   await openaiMarcus.beta.threads.messages.create(
-    threadId! || thread.id,
+    currentThreadId,
     {
       role: 'user',
       content: question,
@@ -29,7 +33,7 @@ export async function marcus(question: string, threadId?: string) {
   );
 
   const run = await openaiMarcus.beta.threads.runs.createAndPoll(
-    threadId! || thread.id,
+    currentThreadId,
     {
       assistant_id: env.OPEN_API_MARCUS_ASSISTANT_ID,
     },
@@ -46,7 +50,7 @@ export async function marcus(question: string, threadId?: string) {
         return {
           role: 'assistant',
           response: textContent,
-          threadId: threadId ?? thread.id,
+          threadId: currentThreadId,
         };
       }
     }

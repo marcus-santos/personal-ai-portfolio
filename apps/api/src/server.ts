@@ -18,25 +18,39 @@ fastify.get('/', async (request, reply) => reply.send({
   message: 'Hello from the API!',
 }));
 
+interface MarcusRequestBody {
+  message: string;
+  threadId?: string;
+}
+
+interface ContactRequestBody {
+  name: string;
+  sender: string;
+  emailSubject: string;
+  content: string;
+}
+
 fastify.post('/marcus', async (request, reply) => {
-  const response = await marcus(request.body.message, request.body.threadId);
+  const body = request.body as MarcusRequestBody;
+  const response = await marcus(body.message, body.threadId);
 
   return reply.send(response);
 });
 
 fastify.post('/contact', async (request, reply) => {
+  const body = request.body as ContactRequestBody;
   const response = await sendEmail(
-    request.body.name,
-    request.body.sender,
-    request.body.emailSubject,
-    request.body.content,
+    body.name,
+    body.sender,
+    body.emailSubject,
+    body.content,
   );
 
   return reply.send(response);
 });
 
 fastify.listen({ port: env.PORT, host: '0.0.0.0' }, (err) => {
-  console.log('🚀 HTTP server running!');
+  fastify.log.info('🚀 HTTP server running!');
 
   if (err) {
     fastify.log.error(err);
