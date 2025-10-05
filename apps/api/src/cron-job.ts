@@ -1,16 +1,20 @@
 import cron from 'node-cron';
+import fetch from 'node-fetch';
 
 export function keepServerAlive() {
   cron.schedule('*/10 * * * *', async () => {
+    const url = 'https://personal-ai-portfolio.onrender.com';
+
     try {
-      const response = await fetch('http://localhost:3333/');
-      if (response.ok) {
-        console.log('Server is alive');
+      const res = await fetch(url);
+      if (res.ok) {
+        console.log(`[KeepAlive] Server is alive (${res.status})`);
       } else {
-        console.error('Server is down');
+        console.error(`[KeepAlive] Server returned status ${res.status}`);
       }
     } catch (error) {
-      console.error('Error pinging server:', error);
+      // Não lança o erro para evitar crash
+      console.log(`[KeepAlive] Error pinging server: ${(error as Error).message}`);
     }
   });
 }
