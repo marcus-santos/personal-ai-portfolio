@@ -1,5 +1,4 @@
 import cors from '@fastify/cors';
-import console from 'console';
 import Fastify from 'fastify';
 import { keepServerAlive } from './cron-job';
 import { env } from './env';
@@ -49,12 +48,18 @@ fastify.post('/contact', async (request, reply) => {
 });
 
 fastify.listen({ port: env.PORT, host: '0.0.0.0' }, (err) => {
-  console.log('🚀 HTTP server running!');
-
   if (err) {
-    fastify.log.error(err);
+    fastify.log.error('Error starting server:', err);
     process.exit(1);
   }
 
-  keepServerAlive();
+  fastify.log.info(`🚀 HTTP server running on port ${env.PORT}!`);
+
+  // Iniciar cron job após o servidor estar rodando
+  try {
+    keepServerAlive();
+    fastify.log.info('Keep alive job started');
+  } catch (error) {
+    fastify.log.error('Error starting keep alive job:', error);
+  }
 });
