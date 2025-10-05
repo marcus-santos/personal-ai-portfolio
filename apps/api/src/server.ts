@@ -25,8 +25,22 @@ const fastify = Fastify({
 });
 
 fastify.register(cors, {
-  origin: env.CORS_URL,
-  strictPreflight: false,
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'https://personal-ai-portfolio-web.vercel.app',
+      'https://personal-ai-portfolio-marcussantos.vercel.app',
+      env.CORS_URL,
+    ];
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Not allowed by CORS'), false);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
 });
 
 fastify.get('/', async (request, reply) => reply.send({
