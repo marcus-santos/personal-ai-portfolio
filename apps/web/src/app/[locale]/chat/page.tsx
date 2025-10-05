@@ -1,6 +1,6 @@
 import { ChatWindow } from '@/components/chat-window';
 import Header from '@/components/common/header';
-import { marcus } from '../../../../types/header-user';
+import marcus from '../../../types/header-user';
 
 function page() {
   return (

@@ -3,9 +3,9 @@
 import Header from '@/components/common/header';
 import ProjectCard from '@/components/project-card';
 import { useProjectsData } from '@/hooks/use-projects-data';
-import { marcus } from '@/types/header-user';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import marcus from '../../../types/header-user';
 
 function Page() {
   const t = useTranslations('Portfolio');

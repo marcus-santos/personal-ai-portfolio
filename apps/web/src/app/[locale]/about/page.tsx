@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LiaDownloadSolid } from 'react-icons/lia';
-import { marcus } from '../../../../types/header-user';
+import marcus from '../../../types/header-user';
 
 function Page() {
   const t = useTranslations('About');

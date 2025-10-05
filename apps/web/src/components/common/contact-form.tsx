@@ -1,12 +1,8 @@
 'use client';
 
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { DialogHeader } from '@/components/ui/dialog';
-import { usePathname } from 'next/navigation';
-import { use, useState } from 'react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { FaRegCircleCheck } from 'react-icons/fa6';
-import { AnimatePresence, motion } from 'framer-motion';
 import {
   Dialog,
   DialogClose,
@@ -14,7 +10,10 @@ import {
   DialogDescription,
   DialogTitle,
 } from '@radix-ui/react-dialog';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import { FaRegCircleCheck } from 'react-icons/fa6';
 
 function ContactForm({
   open,
@@ -71,7 +70,6 @@ function ContactForm({
     }
   };
 
-  const pathName = usePathname();
   const t = useTranslations('Contact');
 
   return (
@@ -141,7 +139,9 @@ function ContactForm({
                   onClick={handleSubmit}
                   disabled={loading || !name || !subject || !email || !message}
                   type="submit"
-                  className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/70 hover:bg-[#22c55e]' : 'bg-violet-500/50 hover:bg-violet-500/80'} mt-4 cursor-pointer`}
+                  className={
+                    'bg-[#22c55e]/70 hover:bg-[#22c55e] mt-4 cursor-pointer'
+                  }
                 >
                   {loading
                     ? `${t('sendButton.sending')}`

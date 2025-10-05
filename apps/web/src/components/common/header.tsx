@@ -1,22 +1,21 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaRegUser } from 'react-icons/fa';
-import { usePathname } from 'next/navigation';
-import ContactForm from './contact-form';
-import { RiMenu2Fill } from 'react-icons/ri';
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import {
-  SheetTrigger,
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
-  SheetClose,
+  SheetTrigger,
 } from '@/components/ui/sheet';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useState } from 'react';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { RiMenu2Fill } from 'react-icons/ri';
+import ContactForm from './contact-form';
 
 interface HeaderProps {
   title: string;
@@ -24,7 +23,7 @@ interface HeaderProps {
   chatRef: string;
   portfolioRef: string;
   aboutRef: string;
-  transfer: string;
+  cvRef: string;
   githubRef: string;
   linkedInRef: string;
   instagramRef: string;
@@ -36,12 +35,11 @@ function Header({
   chatRef,
   portfolioRef,
   aboutRef,
-  transfer,
+  cvRef,
   githubRef,
   linkedInRef,
   instagramRef,
 }: HeaderProps) {
-  const pathName = usePathname();
   const [contactOpen, setContactOpen] = useState(false);
   const t = useTranslations('Header');
 
@@ -65,19 +63,19 @@ function Header({
                 </SheetTitle>
                 <SheetDescription className="flex flex-col p-5 items-start text-sm font-medium text-white/90 my-auto gap-y-5 whitespace-nowrap">
                   <Link
-                    className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                    className={'hover:text-[#22c55e] transition'}
                     href={chatRef}
                   >
                     {t('chat')}
                   </Link>
                   <Link
-                    className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                    className={'hover:text-[#22c55e] transition'}
                     href={portfolioRef}
                   >
                     {t('portfolio')}
                   </Link>
                   <Link
-                    className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+                    className={'hover:text-[#22c55e] transition'}
                     href={aboutRef}
                   >
                     {t('about')}
@@ -85,7 +83,9 @@ function Header({
                   <SheetClose asChild>
                     <button
                       type="button"
-                      className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
+                      className={
+                        'hover:text-[#22c55e] transition cursor-pointer p-0'
+                      }
                       onClick={() => setContactOpen(true)}
                     >
                       {t('contact')}
@@ -102,28 +102,22 @@ function Header({
             {title}
           </Link>
           <nav className="hidden sm:block text-sm font-medium text-white/60 my-auto space-x-6 whitespace-nowrap">
-            <Link
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
-              href={chatRef}
-            >
+            <Link className={'hover:text-[#22c55e] transition'} href={chatRef}>
               {t('chat')}
             </Link>
             <Link
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
+              className={'hover:text-[#22c55e] transition'}
               href={portfolioRef}
             >
               {t('portfolio')}
             </Link>
-            <Link
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'}`}
-              href={aboutRef}
-            >
+            <Link className={'hover:text-[#22c55e] transition'} href={aboutRef}>
               {t('about')}
             </Link>
             <Button
               onClick={() => setContactOpen(true)}
               variant={'link'}
-              className={`${pathName.includes('marcus') ? 'hover:text-[#22c55e] transition' : 'hover:text-violet-500 transition'} transition cursor-pointer p-0`}
+              className={'hover:text-[#22c55e] transition  cursor-pointer p-0'}
             >
               {t('contact')}
             </Button>
@@ -134,28 +128,30 @@ function Header({
             onOpenChange={setContactOpen}
           />
         </div>
-        <div className="flex justify-end w-full my-auto space-x-2">
+        <div className="flex justify-end w-full my-auto space-x-2 items-center">
           <Link
-            href={transfer}
-            className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
+            href={cvRef}
+            className={
+              'hover:bg-[#22c55e]/50 p-2 hover:rounded transition font-semibold'
+            }
           >
-            <FaRegUser size={18} />
+            CV
           </Link>
           <Link
             href={githubRef}
-            className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
+            className={'hover:bg-[#22c55e]/50 transition p-2 hover:rounded '}
           >
             <FaGithub size={18} />
           </Link>
           <Link
             href={linkedInRef}
-            className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
+            className={'hover:bg-[#22c55e]/50 p-2 hover:rounded transition'}
           >
             <FaLinkedinIn size={18} />
           </Link>
           <Link
             href={instagramRef}
-            className={`${pathName.includes('marcus') ? 'hover:bg-[#22c55e]/50 transition' : 'hover:bg-violet-500/50 transition'} p-2 hover:rounded transition`}
+            className={'hover:bg-[#22c55e]/50 transition p-2 hover:rounded'}
           >
             <FaInstagram size={18} />
           </Link>

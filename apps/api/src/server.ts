@@ -1,9 +1,9 @@
-import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { env } from './env';
-import { lukas, marcus } from './openai';
-import { sendEmail } from './resend';
+import Fastify from 'fastify';
 import { keepServerAlive } from './cron-job';
+import { env } from './env';
+import { marcus } from './openai';
+import { sendEmail } from './resend';
 
 const fastify = Fastify();
 
@@ -17,12 +17,6 @@ keepServerAlive();
 fastify.get('/', async (request, reply) => reply.send({
   message: 'Hello from the API!',
 }));
-
-fastify.post('/lukas', async (request, reply) => {
-  const response = await lukas(request.body.message, request.body.threadId);
-
-  return reply.send(response);
-});
 
 fastify.post('/marcus', async (request, reply) => {
   const response = await marcus(request.body.message, request.body.threadId);

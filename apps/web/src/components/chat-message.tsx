@@ -41,7 +41,7 @@ export function ChatMessage({
           'break-words whitespace-pre-wrap',
           isUser
             ? 'bg-primary text-primary-foreground'
-            : 'bg-muted text-muted-foreground',
+            : 'bg-muted text-foreground',
         )}
       >
         {content}
