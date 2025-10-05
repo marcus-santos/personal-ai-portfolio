@@ -123,7 +123,7 @@ function Header({
             </Button>
           </nav>
           <ContactForm
-            api={'http://localhost:3333/contact'}
+            api={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333'}/contact`}
             open={contactOpen}
             onOpenChange={setContactOpen}
           />
