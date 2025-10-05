@@ -5,7 +5,6 @@ import type { Project } from '@/types/portfolio';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 interface ProjectCardProps {
@@ -13,7 +12,6 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
-  const pathName = usePathname();
   const t = useTranslations('Portfolio');
 
   const formatDate = (dateString: string) => {
@@ -58,7 +56,9 @@ function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex gap-4 mt-10">
               {project.liveUrl && (
                 <Button
-                  className={`${pathName.includes('marcus') ? 'bg-[#22c55e]/60 hover:bg-[#22c55e]' : 'bg-violet-500/50 hover:bg-violet-500/80'} cursor-pointer`}
+                  className={
+                    'bg-[#22c55e]/60 hover:bg-[#22c55e] cursor-pointer'
+                  }
                 >
                   <Link
                     href={project.liveUrl}
@@ -73,7 +73,9 @@ function ProjectCard({ project }: ProjectCardProps) {
               {project.githubUrl && (
                 <Button
                   variant="link"
-                  className={`${pathName.includes('marcus') ? ' text-[#22c55e]/80 hover:text-[#22c55e]' : 'text-violet-500/80 hover:text-violet-500'} flex items-center transition underline underline-offset-4`}
+                  className={
+                    'text-[#22c55e]/80 hover:text-[#22c55e] flex items-center transition underline underline-offset-4'
+                  }
                 >
                   <Link
                     href={project.githubUrl}
