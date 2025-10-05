@@ -1,5 +1,4 @@
 import cron from 'node-cron';
-import fetch from 'node-fetch';
 
 export function keepServerAlive() {
   cron.schedule('*/10 * * * *', async () => {
@@ -8,12 +7,14 @@ export function keepServerAlive() {
     try {
       const res = await fetch(url);
       if (res.ok) {
+        // eslint-disable-next-line no-console
         console.log(`[KeepAlive] Server is alive (${res.status})`);
       } else {
+        // eslint-disable-next-line no-console
         console.error(`[KeepAlive] Server returned status ${res.status}`);
       }
     } catch (error) {
-      // Não lança o erro para evitar crash
+      // eslint-disable-next-line no-console
       console.log(`[KeepAlive] Error pinging server: ${(error as Error).message}`);
     }
   });
