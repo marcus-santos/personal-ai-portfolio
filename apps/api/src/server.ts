@@ -1,4 +1,5 @@
 import cors from '@fastify/cors';
+import console from 'console';
 import Fastify from 'fastify';
 import { keepServerAlive } from './cron-job';
 import { env } from './env';
@@ -11,8 +12,6 @@ fastify.register(cors, {
   origin: env.CORS_URL,
   strictPreflight: false,
 });
-
-keepServerAlive();
 
 fastify.get('/', async (request, reply) => reply.send({
   message: 'Hello from the API!',
@@ -50,10 +49,12 @@ fastify.post('/contact', async (request, reply) => {
 });
 
 fastify.listen({ port: env.PORT, host: '0.0.0.0' }, (err) => {
-  fastify.log.info('🚀 HTTP server running!');
+  console.log('🚀 HTTP server running!');
 
   if (err) {
     fastify.log.error(err);
     process.exit(1);
   }
+
+  keepServerAlive();
 });
