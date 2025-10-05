@@ -7,7 +7,9 @@ function page() {
     <div className="flex flex-col h-screen">
       <Header {...marcus} />
       <div className="mb-4 text-sm text-white/60" />
-      <ChatWindow api={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333'}/marcus`} />
+      <ChatWindow
+        api={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333'}/marcus`}
+      />
     </div>
   );
 }
