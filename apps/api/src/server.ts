@@ -1,6 +1,5 @@
 import cors from '@fastify/cors';
 import Fastify from 'fastify';
-import { keepServerAlive } from './cron-job';
 import { env } from './env';
 import { marcus } from './openai';
 import { sendEmail } from './resend';
@@ -56,10 +55,10 @@ fastify.listen({ port: env.PORT, host: '0.0.0.0' }, (err) => {
   fastify.log.info(`🚀 HTTP server running on port ${env.PORT}!`);
 
   // Iniciar cron job após o servidor estar rodando
-  try {
-    keepServerAlive();
-    fastify.log.info('Keep alive job started');
-  } catch (error) {
-    fastify.log.error('Error starting keep alive job:', error);
-  }
+  // try {
+  //   keepServerAlive();
+  //   fastify.log.info('Keep alive job started');
+  // } catch (error) {
+  //   fastify.log.error('Error starting keep alive job:', error);
+  // }
 });
