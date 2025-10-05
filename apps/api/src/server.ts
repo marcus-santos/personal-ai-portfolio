@@ -26,12 +26,27 @@ const fastify = Fastify({
 
 fastify.register(cors, {
   origin: (origin, callback) => {
+    // Permitir requisições sem origin (ex: mobile apps, Postman)
+    if (!origin) return callback(null, true);
+
+    // Lista de origens permitidas
     const allowedOrigins = [
       'http://localhost:3000',
       'https://personal-ai-portfolio-web.vercel.app',
       'https://personal-ai-portfolio-marcussantos.vercel.app',
-      env.CORS_URL,
     ];
+
+    // Adicionar CORS_URL se estiver definida
+    if (env.CORS_URL && env.CORS_URL !== '*') {
+      allowedOrigins.push(env.CORS_URL);
+    }
+
+    // Permitir qualquer subdomínio do Vercel ou se CORS_URL for '*'
+    if (origin.includes('.vercel.app') || env.CORS_URL === '*') {
+      return callback(null, true);
+    }
+
+    // Verificar se a origem está na lista permitida
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     }

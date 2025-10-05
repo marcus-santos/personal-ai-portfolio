@@ -2,8 +2,8 @@ import 'dotenv/config';
 import { z } from 'zod';
 
 const envSchema = z.object({
-  PORT: z.coerce.number().optional().default(Number(process.env.PORT) || 3333),
-  CORS_URL: z.string().optional().default('*'),
+  PORT: z.coerce.number().default(Number(process.env.PORT) || 3333),
+  CORS_URL: z.string().default('*'),
   OPENAI_API_MARCUS_KEY: z.string(),
   OPEN_API_MARCUS_ASSISTANT_ID: z.string(),
   OPEN_API_MARCUS_ASSISTANT_CONTEXT: z.string(),
